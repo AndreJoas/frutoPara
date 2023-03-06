@@ -1,10 +1,13 @@
 import "./styles.css";
 
 
-function Login(){
+function LoginComponente(){
     return(
-            
+            <div>
+                
+                <a href="/cadastroPage">cadastrar</a>
+            </div>
     )
 };
 
-export default Login;
+export default LoginComponente;
