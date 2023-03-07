@@ -1,0 +1,56 @@
+.cardprocurar{
+    flex-wrap: wrap;
+    margin-top: -1rem;
+    max-width: 100%;
+    width: 100%;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* border: solid 1px #fff; */
+}
+.procurar{
+    padding: 2px;
+    max-width: 70%;
+    width: 30%;
+    /* border: solid 1px #fff; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 3rem;
+}
+.lup{
+    position: absolute;
+    max-width: 80%;
+    width: 55%;
+    height: 2rem;
+    margin-top: -1rem;
+}
+.ip2 {
+    max-width: 100%;
+    width: 104%;
+    height: 2.3rem;
+    border: solid 2px #C4C4C4;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.8s;
+}
+.icons{
+    flex-wrap: wrap;
+    max-width: 30%;
+    width: 100%;
+    gap:4px;
+    /* border: solid 1px #fff; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+.imgcard{
+    color:#fff;
+}

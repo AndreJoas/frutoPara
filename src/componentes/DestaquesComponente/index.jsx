@@ -14,6 +14,7 @@ function Destaques(){
            <CardDestaque name="alguma"/>
            <CardDestaque name="alguma"/>
            <CardDestaque name="alguma"/>
+
         </div>
     )
 }

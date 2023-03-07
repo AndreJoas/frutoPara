@@ -1,4 +1,5 @@
 import "./styles.css"
+import { TbArrowBarLeft } from "react-icons/tb";
 
 function Loja(props){
     return(

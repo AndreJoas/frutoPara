@@ -1,8 +1,8 @@
 
 import "./styles.css";
+import { TbArrowBarLeft } from "react-icons/tb";
 
-
-function CadastroComponente(props) {
+function CadastroComponente() {
     return (
         <body>
         <header>

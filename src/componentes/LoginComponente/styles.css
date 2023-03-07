@@ -132,7 +132,7 @@ header {
     text-decoration: none;
     font-size: 1.2rem;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     transition: 0.6s;
 
 
@@ -149,11 +149,7 @@ header {
     }
     .voltar{
         margin-left: 15.5%;
-    }
-
-    .perfil {}
-
-    .campos {}
+    } 
 }
 
 @media (max-width:543px) {

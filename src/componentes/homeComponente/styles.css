@@ -1,0 +1,256 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+header{
+    max-width: 100%;
+    width: 100%;
+    height: 5rem;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    gap:20px;
+    /* border:solid green 2px; */
+    background: #7B0C05;
+}
+.logo{
+    max-width: 40%;
+    width: 70%;
+    padding: 5px;
+}
+.cliente{
+    max-width: 100%;
+    width: 100%;
+    background-color: #fff;}
+.headerCenter{
+    max-width: 60%;
+    width: 70%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    gap:20px;
+    padding: 5px;
+
+}
+a{    text-decoration: none;
+color:#fff}
+.sessao{
+    margin-top: 1rem;
+    max-width: 100%;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+
+}
+.divisao1{
+    max-width: 100%;
+    width: 100%;
+    /* border:solid 1px green; */
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+
+}
+.subdivisao{
+    max-width: 100%;
+    width: 100%;
+    height: 18rem;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+    background-color: #fff;
+}
+.frutas{
+    max-width: 40%;
+    width: 40%;
+    
+}
+.ft{
+    width: 18rem;
+}
+.ft2{
+    width: 16rem;
+}
+.textos2{
+    margin-left: -9rem;
+    max-width: 100%;
+    width: 100%;
+    font-size: 1.5rem;
+    /* border: solid 1px red; */
+    color: #000000;
+}
+.tx2{
+    margin-top: -1.6rem;
+}
+
+
+
+@media (max-width:1080px) {
+    .quadrado{
+        width: 100%;
+    }
+}
+@media (max-width:870px) {
+    .divisao1{
+        margin-top: -2rem;
+    }
+
+    .subdivisao{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .sessao{
+        display: flex;
+        justify-content: column;
+        align-items: center;
+        height: 41rem;
+    }
+    .quadrado{
+        width: 80%;
+        height: 35%;
+        margin-top: -1rem;
+    }
+    .cardprocurar{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 80px;
+        margin-top: 1rem;
+    }
+    .procurar{
+        width: 45%;
+    }
+    .lup{
+        margin-left: 4rem;
+    }
+}
+
+@media (max-width:772px) {
+    .divisao1{
+        gap:10px;
+
+    }
+    .ft{
+        width: 12rem;
+    }
+    .ft2{
+        margin-top: 4.6rem;
+        margin-left: -2rem;
+        width: 12rem;
+    }
+    .textos2{
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    .sessao{
+        height: 44rem;
+    }
+    .cardprocurar{
+        width: 100%;
+        gap:5px;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+
+    }
+    .procurar{
+        width: 100%;
+    }
+    .icons{
+        max-width: 40%;
+        width: 50%;
+    }
+    .lup{
+        margin-left: 9rem;
+    }
+    .wel{
+        width: 100%;
+    }
+}
+
+@media (max-width:580px) {
+.divisao1{
+    display: flex;
+}
+.ft{
+    width: 11rem;
+}
+.ft2{
+    margin-top: 5.6rem;
+    width: 11rem;
+    margin-left: -2rem;
+}
+.textos2{
+    text-align: center;
+    font-size: 1.5rem;
+}
+}
+
+@media (max-width:568px){
+    .divisao1{
+        flex-wrap: wrap;
+    }
+    .image{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .sessao{
+        height:67.5rem;
+    }
+    .icons{
+        max-width: 100%;
+    }
+    .quadrado{
+        margin-top: 2rem;
+    }
+    .procurar{
+        max-width: 100%;
+    }
+    .icons{
+        width: 100%;
+    }
+    
+    .headerCenter{
+        font-size: 0.9rem;
+        justify-content: center;
+        max-width: 100%;
+    }
+    .wel{
+        width: 50%;
+    }
+}
+@media (max-width:458px){
+    .sessao{
+        height:77.5rem;
+
+    }
+    .quadrado{
+        height:37rem;
+    }
+    .subdivisao{
+        display: flex;
+        width: 100%;
+        margin-top: -2rem;
+        height: 10rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .textos2{
+        width: 100%;
+        font-size: 1.2rem;
+    }
+      
+    .header{
+        height: 10rem;
+    }
+}

@@ -18,7 +18,7 @@ function LoginLoja() {
                         <input className="ip" type="name" placeholder="nome" />
                         <input className="ip" type="senha" placeholder="senha Loja" />
                     </div>
-                    <a href=""><button className="entrar">Entrar</button></a>
+                    <a href="/HomeLoja"><button className="entrar">Entrar</button></a>
                 </div>
             </section>
             <a href="/inicioPage" className="voltar">Voltar</a>

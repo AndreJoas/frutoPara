@@ -4,10 +4,21 @@
     justify-self: center;
     align-items: center;
     color:#7B0C05;
+    cursor: pointer;
+    width: 5rem;
+    height: 7rem;
+    margin-top:0.01rem ;
+    transition: 0.9s;
 }
 .elipse{
     background-color: gray;
-    width: 70px;
+    width: 60px;
     height: 70px;
     border-radius: 50%;
+}
+.card:hover{
+    background: #7B0C05;
+    color:#fff;
+    border:solid 1px #000000;
+    border-radius: 10px;
 }
