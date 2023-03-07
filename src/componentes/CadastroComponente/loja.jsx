@@ -1,9 +1,7 @@
+import "./styles.css"
 
-import "./styles.css";
-
-
-function CadastroComponente(props) {
-    return (
+function Loja(props){
+    return(
         <body>
         <header>
             <div className="logo">logo</div>
@@ -17,7 +15,7 @@ function CadastroComponente(props) {
                 </div>
                 <div className="campos">
                     <input className="ip" type="name"  placeholder="nome"/>
-                    <input className="ip" type="senha" placeholder="Email"/>
+                    <input className="ip" type="senha" placeholder="Cnpj"/>
                     <input className="ip" type="name"  placeholder="Telefone"/>
                     <input className="ip" type="senha" placeholder="Endereço"/>
                     <input className="ip" type="senha" placeholder="Senha"/>
@@ -27,8 +25,7 @@ function CadastroComponente(props) {
         </section>
         <a href="/inicioPage" className="voltar">Voltar</a>
     </body>
-        
     )
-};
+}
 
-export default CadastroComponente;
+export default Loja;

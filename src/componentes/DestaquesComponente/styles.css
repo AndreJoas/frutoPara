@@ -1,0 +1,13 @@
+.quadrado{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 2px #7B0C05;
+    max-width: 100%;
+    width: 80%;
+    border-radius: 20px;
+    background: #fff;
+    padding: 10px;
+    gap: 10px;
+}

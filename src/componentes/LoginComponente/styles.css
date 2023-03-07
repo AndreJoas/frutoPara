@@ -1,0 +1,197 @@
+header {
+    max-width: 100%;
+    width: max-content;
+    display: flex;
+    padding: 20px;
+}
+
+.login {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forme {
+    max-width: 40%;
+    width: 100%;
+    height: 20rem;
+    border: solid 1px #fff;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 5px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.bem{
+    color: #0f0e0e;
+    font-size: 2rem;
+}
+
+.perfil {
+    max-width: 100%;
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+#bt {
+    max-width: 30%;
+    width: 50%;
+    height: 2rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: #67d243;
+    transition: 0.8s;
+}
+
+#bt2 {
+    max-width: 30%;
+    width: 50%;
+    height: 2rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+#bt:hover {
+    background: #16d516;
+    color: #f7f7f7;
+    font-weight: 800;
+}
+
+#bt2:hover {
+    background: #67d243;
+    color: #000000;
+    font-weight: 800;
+}
+
+.campos {
+    max-width: 100%;
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.ip {
+    max-width: 100%;
+    width: 64%;
+    height: 1.7rem;
+    border: solid 2px #C4C4C4;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.8s;
+
+}
+
+.entrar {
+    max-width: 100%;
+    width: 100%;
+    height: 1.8rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: #844CB1;
+    transition: 0.8s;
+    color: #000000;
+    margin-top: 1.5rem;
+    font-weight: 400;
+}
+
+.entrar:hover {
+    font-weight: 800;
+}
+
+.voltar {
+    width: 4%;
+    margin-left: 30%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: start;
+    transition: 0.6s;
+
+
+}
+
+.voltar:hover {
+    border-bottom: 3px solid #67d243;
+}
+
+@media (max-width:823px) {
+    .forme {
+        max-width: 70%;
+        width: 80%;
+    }
+    .voltar{
+        margin-left: 15.5%;
+    }
+
+    .perfil {}
+
+    .campos {}
+}
+
+@media (max-width:543px) {
+    .forme {
+        max-width: 80%;
+        width: 80%;
+    }
+    .voltar{
+        margin-left: 10.5%;
+    }
+    
+    .perfil {
+        max-width: 100%;
+        width: 100%;
+        gap:20px;
+    }
+    #bt{
+        max-width: 40%;
+    }
+    #bt2{
+        max-width: 40%;
+    }
+    .ip{
+        width: 85%;
+    }
+}
+@media (max-width:363px)
+{
+    .forme {
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+        height: 30%;
+    }
+    #bt{
+        max-width: 45%;
+    }
+    #bt2{
+        max-width: 45%;
+    }
+}

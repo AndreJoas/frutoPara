@@ -1,0 +1,13 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+    color:#7B0C05;
+}
+.elipse{
+    background-color: gray;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
