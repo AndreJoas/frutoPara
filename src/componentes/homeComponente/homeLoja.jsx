@@ -6,6 +6,7 @@ import heart from "../procurandoComponente/heart.svg";
 import user from "../procurandoComponente/user.svg";
 import "./styles2.css"
 import ListaLoja from "../listaLojaComponente";
+import ListaLojaProdutos from "../listaLojaProdutoComponente";
 
 export default function HomeLoja() {
     return (
@@ -68,7 +69,7 @@ export default function HomeLoja() {
                     </div>
                 </div>
 
-                <ListaLoja/>
+                <ListaLojaProdutos/>
             </section>
         </body>
     )

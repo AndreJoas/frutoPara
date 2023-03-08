@@ -1,7 +1,10 @@
 import "./styles.css";
+import { useState } from "react";
 
 
 function LoginComponente() {
+    const [valueLogin, newValueLogin] = useState(0)
+
     return (
         <body>
             <header>
@@ -15,8 +18,8 @@ function LoginComponente() {
                         <button id="bt2" ><a href="/lojaLoginPage" style={{ textDecoration: "none", color: "#000000" }}>Loja/PJ</a></button>
                     </div>
                     <div className="campos">
-                        <input className="ip" type="name" placeholder="nome"/>
-                        <input className="ip" type="senha" placeholder="senha"/>
+                        <input className="ip" type="name" placeholder="nome" value={valueLogin} onChange={e => newValueLogin(e.target.value)} />
+                        <input className="ip" type="senha" placeholder="senha" />
                     </div>
                     <a href="/HomeCliente"><button className="entrar">Entrar</button></a>
                 </div>
