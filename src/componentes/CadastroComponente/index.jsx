@@ -22,7 +22,7 @@ function CadastroComponente() {
                     <input className="ip" type="senha" placeholder="Endereço"/>
                     <input className="ip" type="senha" placeholder="Senha"/>
                 </div>
-                <a href=""><button className="entrar">Entrar</button></a>
+                <a href="/loginPage"><button className="entrar">Entrar</button></a>
             </div>
         </section>
         <a href="/inicioPage" className="voltar">Voltar</a>

@@ -11,8 +11,8 @@ function LoginLoja() {
                 <div className="forme">
                     <h1 className="bem">Bem vindo ao Login</h1>
                     <div className="perfil">
-                        <button id="bt"><a href="/loginPage" style={{ textDecoration: "none", color: "#000000" }}>Cliente/PF</a></button>
-                        <button id="bt2" ><a href="/lojaLoginPage" style={{ textDecoration: "none", color: "#000000" }}>Loja/PJ</a></button>
+                        <button id="btt"><a href="/loginPage" style={{ textDecoration: "none", color: "#000000" }}>Cliente/PF</a></button>
+                        <button id="btt2" ><a href="/lojaLoginPage" style={{ textDecoration: "none", color: "#000000" }}>Loja/PJ</a></button>
                     </div>
                     <div className="campos">
                         <input className="ip" type="name" placeholder="nome" />

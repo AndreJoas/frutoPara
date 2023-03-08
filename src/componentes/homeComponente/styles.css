@@ -9,7 +9,7 @@
 header{
     max-width: 100%;
     width: 100%;
-    height: 5rem;
+    height: 3rem;
     display:flex;
     flex-direction: row;
     justify-content: center;
@@ -51,7 +51,7 @@ color:#fff}
 
 }
 .divisao1{
-    max-width: 100%;
+    max-width: 80%;
     width: 100%;
     /* border:solid 1px green; */
     display:flex;
@@ -71,8 +71,8 @@ color:#fff}
     background-color: #fff;
 }
 .frutas{
-    max-width: 40%;
-    width: 40%;
+    max-width: 30%;
+    width: 100%;
     
 }
 .ft{
@@ -93,8 +93,42 @@ color:#fff}
     margin-top: -1.6rem;
 }
 
+.lojasparte{
+    max-width: 100%;
+    width: 89%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pesquLojas{
+    max-width: 100%;
+    width: 89%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    border-bottom: 3px solid #7B0C05;
+}
+.divip{
+    max-width: 40%;
+    width: 100%;
+}
+.ip1 {
+    max-width: 100%;
+    width: 100%;
+    border: none;
+    border-top: 3px solid #7B0C05;
+    border-radius: 6px;
+    height: 2.5rem;
+    padding: 0 20px;
+    font-size: 1.2rem;
 
-
+    cursor: pointer;
+    transition: 0.8s;
+}
 @media (max-width:1080px) {
     .quadrado{
         width: 100%;
@@ -158,7 +192,7 @@ color:#fff}
         height: 44rem;
     }
     .cardprocurar{
-        width: 100%;
+        width: 80%;
         gap:5px;
         justify-content: space-around;
         align-items: center;

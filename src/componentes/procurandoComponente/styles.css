@@ -1,7 +1,7 @@
 .cardprocurar{
     flex-wrap: wrap;
     margin-top: -1rem;
-    max-width: 100%;
+    max-width: 80%;
     width: 100%;
     padding: 2px;
     display: flex;

@@ -1,2 +1,37 @@
 
-    
+#bt33 {
+    max-width: 30%;
+    width: 50%;
+    height: 2rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: #67d243;
+    transition: 0.8s;
+}
+
+#bt22 {
+    max-width: 30%;
+    width: 50%;
+    height: 2rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+#bt22:hover {
+    background: #16d516;
+    color: #f7f7f7;
+    font-weight: 800;
+}
+
+#bt33:hover {
+    background: #67d243;
+    color: #000000;
+    font-weight: 800;
+}

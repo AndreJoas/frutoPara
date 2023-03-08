@@ -1,9 +1,10 @@
 .nomeloja{
-    width: 100%;
-    border: solid 1px green;
-    height: 8rem;
+    width: 90%;
+    border: solid 1px #7B0C05;
+    height: 6rem;
     display: flex;
     flex-direction: row;
+    padding: 0 20px;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
@@ -39,4 +40,66 @@
 .sobre{
     margin-right: 8%;
     color:#7B0C05;
+}
+
+
+.selects{
+    /* border: solid 1px #7B0C05; */
+    display:flex;
+    max-width: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 100px;
+
+    justify-content: center;
+    align-items: center;
+}
+.divisor{
+    display:flex;
+    max-width: 90%;
+    width: 50%;
+    gap:10px;
+    justify-content: center;
+    align-items: center;   
+    flex-wrap: wrap;
+    border-bottom: 3px  solid #730e0e;
+}
+.selec1{
+    max-width: 90%;
+    width: 29%;
+    display: flex;
+    padding: 5px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.8s;
+    gap: 10px;
+    
+}
+.selec1:hover{
+    background-color: #7B0C05;
+    color: #fff;
+    border-radius: 10px;
+}
+select{
+    /* border: none; */
+    width: 40%;
+    border: none;
+    outline: none;
+
+}
+.icons2{
+    flex-wrap: wrap;
+    max-width: max-content;
+    width: 24%;
+    display: flex;
+    gap:70px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.imgcard2{
+    color:#fff;
 }

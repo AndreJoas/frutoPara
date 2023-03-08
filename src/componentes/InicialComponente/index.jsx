@@ -1,7 +1,6 @@
 import "./styles.css";
 import image from "../InicialComponente/ft.svg"
 
-
 function InicialComponente() {
     return (
         <body>
@@ -27,6 +26,8 @@ function InicialComponente() {
                 <div className="div2">
                     <div className="image"><img src={image} alt="" /></div>
                 </div>
+
+             
             </section>
             
         </body>
