@@ -8,7 +8,7 @@ import "./styles.css"
 
 function CardLojaProduto() {
     return (
-        <div className="cardl">
+        <div className="carde">
             <div className="elipsel"></div>
             <div className="card2">
                 <NomeProduto name="Nome Produto" />

@@ -1,4 +1,4 @@
-.cardl{
+.carde{
     max-width: 100%;
     width: 70%;
     display: flex;
@@ -9,6 +9,7 @@
     border-radius: 10px;
     cursor: pointer;
     transition: 0.9s;
+    margin: 4px;
 }
 /* .card1:hover{
     border: solid 1px red;
@@ -22,6 +23,8 @@
     border-radius: 10px;
 }
 .card2{
+    max-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap:1px;
@@ -45,13 +48,18 @@
     width: 100%;
     align-items: center;
     margin-top: -1rem;
-    gap:160px;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .divi{
     display: flex;
     flex-direction: row;
-    max-width: 70%;
-    width: 24%;
-    justify-content:center;
+    gap: 10px;
+    width: 100%;
+    justify-content:flex-start;
 }
+/* @media (max-width:1130px) {
+    .carde {
+        max-width: 100%;
+        width: 50%;
+    }
+} */

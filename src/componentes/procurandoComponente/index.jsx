@@ -8,7 +8,6 @@ export default function Procurando() {
     return (
         <div className="cardprocurar">
             <div className="procurar">     
-                <div><img   className="lup" src={Lupa} /></div>
                 <input className="ip2" type="text" placeholder="O que está procurando?" />
             </div>
             <div className="icons">

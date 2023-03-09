@@ -1,8 +1,8 @@
-.lista {
+.lista2 {
     overflow-y: scroll;
     max-width: 100%;
     width: 90%;
-    height: 26rem;
+    height: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,19 +12,19 @@
 
 }
 
-.lista::-webkit-scrollbar {
+.lista2::-webkit-scrollbar {
     width: 10px;
  
     /* width of the entire scrollbar */
 }
 
-.lista::-webkit-scrollbar-track {
+.lista2::-webkit-scrollbar-track {
     background: #dddbdb;
     
     /* color of the tracking area */
 }
 
-.lista::-webkit-scrollbar-thumb {
+.lista2::-webkit-scrollbar-thumb {
     background-color: #7B0C05;
     /* color of the scroll thumb */
     border-radius: 50px;
@@ -34,14 +34,38 @@
     /* creates padding around scroll thumb */
 }
 
-.numero1 {
-    margin-top: 1rem;
+.numero2 {
+    margin-top: 2rem;
     max-width: 100%;
-    width: 95%;
+    width: 100%;
     display: flex;
-    flex-direction: row;
     gap: 10px;
+    flex-direction: row;
     padding: 5px;
     justify-content: center;
     align-items: center;
+}
+@media (max-width:1150px){
+    .numero2{
+        max-width: 100%;
+        width: 90%;
+    }
+}
+@media (max-width:800px){
+    .numero2{
+       
+        max-width: 100%;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+@media (max-width:570px){
+    .numero2{
+        max-width: 100%;
+        width: 100%;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+    }
 }

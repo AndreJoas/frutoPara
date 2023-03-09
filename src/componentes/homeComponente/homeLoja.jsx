@@ -19,7 +19,7 @@ export default function HomeLoja() {
                 <div className="nomeloja">
                     <div className="perfilLoja">
                         <div className="elipse2"></div>
-                        <h3>Nome Loja</h3>
+                        <h3 className="n">Nome Loja</h3>
                     </div>
                     <div className="divdados">
                         <div className="dados">
@@ -28,7 +28,7 @@ export default function HomeLoja() {
                         </div>
                     </div>
                     <div className="sobre">
-                        <h2>Sobre a loja</h2>
+                        <h2 className="n">Sobre a loja</h2>
                     </div>
                 </div>
 
@@ -62,7 +62,7 @@ export default function HomeLoja() {
                             </select>
                         </div>
                     </div>
-                    <div className="icons2">
+                    <div className="icons3">
                         <div className="imgcard2"><img src={user} alt="" /></div>
                         <div className="imgcard2"><img src={heart} alt="" /></div>
                         <div className="imgcard2"><img src={bag} alt="" /></div>

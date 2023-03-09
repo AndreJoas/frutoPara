@@ -4,32 +4,32 @@ import "./styles.css";
 
 function ListaLojaProdutos() {
     return (
-        <div className="lista">
-                <div className="numero1">
+        <div className="lista2">
+                <div className="numero2">
                     <CardLojaProduto />
                     <CardLojaProduto/>
                     <CardLojaProduto/>
                     <CardLojaProduto/>
                 </div>
-                <div className="numero1">
+                <div className="numero2">
                     <CardLojaProduto/>
                     <CardLojaProduto/>
                     <CardLojaProduto/>
                     <CardLojaProduto/>
                 </div>
-                <div className="numero1">
+                <div className="numero2">
                     <CardLojaProduto/>
                     <CardLojaProduto/>
                     <CardLojaProduto/>
                     <CardLojaProduto/>
                 </div>
-                <div className="numero1">
+                <div className="numero2">
                     <CardLojaProduto/>
                     <CardLojaProduto/>
                     <CardLojaProduto/>
                     <CardLojaProduto/>
                 </div>
-                <div className="numero1">
+                <div className="numero2">
                     <CardLojaProduto/>
                     <CardLojaProduto/>
                     <CardLojaProduto/>

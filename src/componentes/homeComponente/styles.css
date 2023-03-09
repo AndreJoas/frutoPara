@@ -152,6 +152,8 @@ a {
 }
 
 @media (max-width:1080px) {
+ 
+
     .headerCenter {
         gap: 4px;
     }
@@ -414,6 +416,7 @@ a {
         width: 100%;
         font-size: 1.2rem;
     }
+
     header {
         flex-wrap: wrap-reverse;
         height: 7em;
@@ -421,8 +424,9 @@ a {
         width: 100%;
         align-items: center;
         justify-content: center;
-        gap:5px;
+        gap: 5px;
     }
+
     .headerCenter {
         max-width: 100%;
         width: 100%;
@@ -431,14 +435,15 @@ a {
         align-items: center;
         justify-content: center;
     }
-    .quadrado{
+
+    .quadrado {
         width: 100%;
-        gap:5px;
+        gap: 5px;
     }
-    .cardl
-    h3{
+
+    .cardl h3 {
         width: 5em;
     }
 
-  
+
 }

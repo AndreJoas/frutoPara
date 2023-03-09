@@ -1,10 +1,11 @@
 .nomeloja{
-    width: 90%;
+    max-width: 100%;
+    width: 95%;
     border: solid 1px #7B0C05;
     height: 6rem;
     display: flex;
     flex-direction: row;
-    padding: 0 20px;
+    padding: 0 10px;
     justify-content: space-between;
     align-items: center;
     border-radius: 10px;
@@ -17,16 +18,19 @@
     border-radius: 50%;
 }
 .perfilLoja{
+    max-width: 14%;
+    width: 50%;
     display:flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap:10px;
     font-size: 1.2rem;
     color: #7B0C05;
     /* color: #fff; */
 }
 .divdados{
-    margin-left: 60%;
+    margin-left: 62%;
+    max-width: 30%;
+    width: 10%;
     padding: 10px;
     border-right: solid 3px gray;
 }
@@ -38,7 +42,7 @@
     color:#FFBB0D;
 }
 .sobre{
-    margin-right: 8%;
+    
     color:#7B0C05;
 }
 
@@ -48,15 +52,14 @@
     display:flex;
     max-width: 100%;
     width: 100%;
-    flex-wrap: wrap;
-    gap: 100px;
-
-    justify-content: center;
+    flex-wrap: wrap-reverse ;
+    gap: 10px;
+    justify-content: space-around;
     align-items: center;
 }
 .divisor{
     display:flex;
-    max-width: 90%;
+    max-width: 80%;
     width: 50%;
     gap:10px;
     justify-content: center;
@@ -89,10 +92,10 @@ select{
     outline: none;
 
 }
-.icons2{
+.icons3{
     flex-wrap: wrap;
-    max-width: max-content;
-    width: 24%;
+    max-width: 40%;
+    width: 80%;
     display: flex;
     gap:70px;
     flex-direction: row;
@@ -102,4 +105,136 @@ select{
 }
 .imgcard2{
     color:#fff;
+}
+
+
+@media (max-width:1150px){
+        .perfilLoja{
+            max-width: 30%;
+            width:20%;
+        }
+        
+        .divdados{
+            margin-left: 50%;
+            max-width: 10%;
+            width: 100%;
+        }
+       
+      
+}
+@media (max-width:991px) {
+    
+    .lista2{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        width: 100%;
+    }
+
+}
+@media (max-width:891px) {
+    .nomeloja{
+        max-width: 100%;
+        justify-content: space-between;
+        gap:20px;
+    }
+    .perfilLoja{
+        gap:10px;
+        max-width: 80%;
+        width:100%;
+
+        
+    }
+    .icons3{
+        max-width: 100%;
+        width: 100%;
+    }
+    .elipse2{
+        margin-left: -20%;
+    }
+    .divdados{
+        margin-left: 30%;
+        max-width: 30%;
+        width: 40%;
+    }
+    .sobre{
+        max-width: 40%;
+        width: 60%;
+    }
+  
+    .divisor{
+        max-width: 90%;
+        width: 100%;
+    }
+    .nomeloja{
+        max-width: 90%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        
+    }
+    .perfilLoja{
+        margin-left: 10%;
+    }
+}
+@media (max-width:650px) {
+    .divisor{
+        max-width: 100%;
+        width: 100%;
+        gap:2px;
+        justify-content: space-between;
+    }
+    .selec1{
+        width: 33%;
+    }
+    .nomeloja{
+        max-width: 100%;
+        width: 100%;
+    }
+    .n{
+        font-size: 1rem;
+    }
+    .nomeloja{
+        gap:2px;
+    }
+    .divdados{
+        margin-left: 24%;
+    }
+}
+@media (max-width:460px) {
+    .nomeloja{
+        margin-top: -4.5rem;
+        height: 10.5rem;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+    }
+    .perfilLoja{
+        margin-top: 0.3rem;
+    }
+    .divdados{
+        margin-left: 2%;
+    }
+    .icons3{
+        max-width: 100%;
+        width: 100%;
+        gap:1px;
+        justify-content: space-between;
+    }
+    .divisor{
+        max-width: 100%;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        gap:7px;
+        flex-wrap: wrap;
+    }
+    .selec1{
+        max-width: 70%;
+        width: 100%;
+    }
 }
