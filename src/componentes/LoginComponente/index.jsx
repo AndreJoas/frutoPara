@@ -3,7 +3,7 @@ import { useState } from "react";
 
 
 function LoginComponente() {
-    const [valueLogin, newValueLogin] = useState(0)
+    const [valueLogin, newValueLogin] = useState("")
 
     return (
         <body>

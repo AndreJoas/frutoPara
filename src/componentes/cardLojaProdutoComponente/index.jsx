@@ -13,7 +13,7 @@ function CardLojaProduto() {
             <div className="card2">
                 <NomeProduto name="Nome Produto" />
                 <NomeLojas name="Loja"/>
-                <NomeVendedores name="Vendedor" />
+                <NomeVendedores name="Vendedor"/>
             </div>
             <hr />
             <div className="divi1">

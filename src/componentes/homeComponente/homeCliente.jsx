@@ -1,3 +1,5 @@
+// Responsivo
+
 import Destaques from "../DestaquesComponente"
 import Procurando from "../procurandoComponente"
 import wel from "../homeComponente/w.svg";

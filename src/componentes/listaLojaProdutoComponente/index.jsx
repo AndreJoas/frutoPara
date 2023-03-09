@@ -6,13 +6,7 @@ function ListaLojaProdutos() {
     return (
         <div className="lista">
                 <div className="numero1">
-                    <CardLojaProduto/>
-                    <CardLojaProduto/>
-                    <CardLojaProduto/>
-                    <CardLojaProduto/>
-                </div>
-                <div className="numero1">
-                    <CardLojaProduto/>
+                    <CardLojaProduto />
                     <CardLojaProduto/>
                     <CardLojaProduto/>
                     <CardLojaProduto/>
@@ -35,7 +29,13 @@ function ListaLojaProdutos() {
                     <CardLojaProduto/>
                     <CardLojaProduto/>
                 </div>
-                
+                <div className="numero1">
+                    <CardLojaProduto/>
+                    <CardLojaProduto/>
+                    <CardLojaProduto/>
+                    <CardLojaProduto/>
+                </div>
+
         </div>
     )
 }

@@ -3,85 +3,102 @@
     box-sizing: border-box;
     font-family: 'Roboto';
 }
-.corpo{
+
+.corpo {
     background-color: #fff;
 }
-header{
+
+header {
     max-width: 100%;
     width: 100%;
     height: 3rem;
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items:center;
-    gap:20px;
+    align-items: center;
+    gap: 20px;
     /* border:solid green 2px; */
     background: #7B0C05;
 }
-.logo{
+
+.logo {
     max-width: 40%;
     width: 70%;
     padding: 5px;
 }
-.cliente{
+
+.cliente {
     max-width: 100%;
     width: 100%;
-    background-color: #fff;}
-.headerCenter{
+    background-color: #fff;
+}
+
+.headerCenter {
     max-width: 60%;
     width: 70%;
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items:center;
-    gap:20px;
+    align-items: center;
+    gap: 20px;
     padding: 5px;
 
 }
-a{    text-decoration: none;
-color:#fff}
-.sessao{
+
+a {
+    text-decoration: none;
+    color: #fff
+}
+
+.sessao {
     margin-top: 1rem;
     max-width: 100%;
     width: 100%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:center;
+    align-items: center;
+    flex-wrap: wrap;
 
 }
-.divisao1{
+
+.divisao1 {
     max-width: 80%;
     width: 100%;
     /* border:solid 1px green; */
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 
 }
-.subdivisao{
+
+.subdivisao {
     max-width: 100%;
     width: 100%;
     height: 18rem;
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     background-color: #fff;
 }
-.frutas{
+
+.frutas {
     max-width: 30%;
     width: 100%;
-    
+
 }
-.ft{
+
+.ft {
     width: 18rem;
 }
-.ft2{
+
+.ft2 {
     width: 16rem;
 }
-.textos2{
+
+.textos2 {
     margin-left: -9rem;
     max-width: 100%;
     width: 100%;
@@ -89,11 +106,12 @@ color:#fff}
     /* border: solid 1px red; */
     color: #000000;
 }
-.tx2{
+
+.tx2 {
     margin-top: -1.6rem;
 }
 
-.lojasparte{
+.lojasparte {
     max-width: 100%;
     width: 89%;
     display: flex;
@@ -101,7 +119,8 @@ color:#fff}
     align-items: center;
     justify-content: center;
 }
-.pesquLojas{
+
+.pesquLojas {
     max-width: 100%;
     width: 89%;
     display: flex;
@@ -112,10 +131,12 @@ color:#fff}
     border: none;
     border-bottom: 3px solid #7B0C05;
 }
-.divip{
+
+.divip {
     max-width: 40%;
     width: 100%;
 }
+
 .ip1 {
     max-width: 100%;
     width: 100%;
@@ -129,33 +150,57 @@ color:#fff}
     cursor: pointer;
     transition: 0.8s;
 }
+
 @media (max-width:1080px) {
-    .quadrado{
+    .headerCenter {
+        gap: 4px;
+    }
+
+    header {
+        width: 100%;
+        gap: 4px;
+    }
+
+    .quadrado {
+        width: 100%;
+    }
+
+    .lojasparte {
+        max-width: 100%;
         width: 100%;
     }
 }
+
 @media (max-width:870px) {
-    .divisao1{
-        margin-top: -2rem;
+    .sessao {
+        margin-top: 1.4rem;
+        display: flex;
+        justify-content: column;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 6px;
     }
 
-    .subdivisao{
+    .divisao1 {
+        margin-top: -2rem;
+        padding: 6px;
+    }
+
+    .subdivisao {
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .sessao{
-        display: flex;
-        justify-content: column;
-        align-items: center;
-        height: 41rem;
-    }
-    .quadrado{
-        width: 80%;
+
+    .quadrado {
+        max-width: 100%;
+        width: 95%;
         height: 35%;
         margin-top: -1rem;
     }
-    .cardprocurar{
+
+    .cardprocurar {
+        max-width: 100%;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -163,118 +208,200 @@ color:#fff}
         gap: 80px;
         margin-top: 1rem;
     }
-    .procurar{
+
+    .procurar {
         width: 45%;
     }
-    .lup{
+
+    .lup {
         margin-left: 4rem;
     }
 }
 
 @media (max-width:772px) {
-    .divisao1{
-        gap:10px;
+    .lojasparte {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .lista {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        max-width: 100%;
+        width: 100%;
+
+        /* flex-wrap: wrap; */
+    }
+
+    .cardl {
+        max-width: max-content;
+        width: 30%;
+    }
+
+    .divisao1 {
+        max-width: 100%;
+        width: 100%;
+        gap: 10px;
 
     }
-    .ft{
+
+    .ft {
         width: 12rem;
     }
-    .ft2{
+
+    .ft2 {
         margin-top: 4.6rem;
         margin-left: -2rem;
         width: 12rem;
     }
-    .textos2{
+
+    .textos2 {
         text-align: center;
         font-size: 1.5rem;
     }
-    .sessao{
-        height: 44rem;
-    }
-    .cardprocurar{
-        width: 80%;
-        gap:5px;
+
+    .cardprocurar {
+        max-width: 100%;
+        width: 100%;
+        gap: 5px;
         justify-content: space-around;
         align-items: center;
         flex-wrap: wrap-reverse;
 
     }
-    .procurar{
+
+    .procurar {
         width: 100%;
     }
-    .icons{
+
+    .icons {
         max-width: 40%;
         width: 50%;
     }
-    .lup{
+
+    .lup {
         margin-left: 9rem;
     }
-    .wel{
+
+    .wel {
         width: 100%;
     }
 }
 
-@media (max-width:580px) {
-.divisao1{
-    display: flex;
-}
-.ft{
-    width: 11rem;
-}
-.ft2{
-    margin-top: 5.6rem;
-    width: 11rem;
-    margin-left: -2rem;
-}
-.textos2{
-    text-align: center;
-    font-size: 1.5rem;
-}
+@media (max-width:596px) {
+    .numero1 {
+
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lojasparte {
+        max-width: 96%;
+        width: 100%;
+    }
+
+    .lista {
+        max-width: 100%;
+        width: 60%;
+    }
+
+    .divisao1 {
+        display: flex;
+    }
+
+    .ft {
+        width: 11rem;
+    }
+
+    .ft2 {
+        margin-top: 5.6rem;
+        width: 11rem;
+        margin-left: -2rem;
+    }
+
+    .textos2 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
 }
 
-@media (max-width:568px){
-    .divisao1{
+@media (max-width:568px) {
+    .numero1 {
+        max-width: 100%;
+        width: 60%;
         flex-wrap: wrap;
     }
-    .image{
+
+    .divisao1 {
+        flex-wrap: wrap;
+    }
+
+    .image {
         width: 100%;
         justify-content: center;
         align-items: center;
     }
-    .sessao{
-        height:67.5rem;
-    }
-    .icons{
+
+    .icons {
         max-width: 100%;
     }
-    .quadrado{
+
+    .quadrado {
         margin-top: 2rem;
     }
-    .procurar{
+
+    .procurar {
         max-width: 100%;
     }
-    .icons{
+
+    .icons {
         width: 100%;
     }
-    
-    .headerCenter{
+
+    .headerCenter {
         font-size: 0.9rem;
         justify-content: center;
         max-width: 100%;
     }
-    .wel{
+
+    .wel {
         width: 50%;
     }
 }
-@media (max-width:458px){
-    .sessao{
-        height:77.5rem;
 
+@media (max-width:458px) {
+    .lojasparte {
+        max-width: 100%;
+        width: 100%;
     }
-    .quadrado{
-        height:37rem;
+
+    .lista {
+        max-width: 100%;
+        width: 100%;
     }
-    .subdivisao{
+
+    .cardl {
+        max-width: 100%;
+        width: 100%;
+        height: 12rem;
+    }
+
+    .sessao {
+        margin-top: 5rem;
+        gap: 1px;
+    }
+
+    .quadrado {
+        height: 37rem;
+    }
+
+    .subdivisao {
         display: flex;
         width: 100%;
         margin-top: -2rem;
@@ -282,12 +409,36 @@ color:#fff}
         justify-content: center;
         align-items: center;
     }
-    .textos2{
+
+    .textos2 {
         width: 100%;
         font-size: 1.2rem;
     }
-      
-    .header{
-        height: 10rem;
+    header {
+        flex-wrap: wrap-reverse;
+        height: 7em;
+        max-width: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap:5px;
     }
+    .headerCenter {
+        max-width: 100%;
+        width: 100%;
+        gap: 2px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    .quadrado{
+        width: 100%;
+        gap:5px;
+    }
+    .cardl
+    h3{
+        width: 5em;
+    }
+
+  
 }
