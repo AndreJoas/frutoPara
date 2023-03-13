@@ -1,8 +1,17 @@
-header {
-    max-width: 100%;
-    width: max-content;
+.headerLogin {
+    width: 100%;
     display: flex;
-    padding: 20px;
+    height: 50%;
+}
+
+.logoHeaderLogin{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.logoHeaderLogin > img{
+    width: 10%;
 }
 
 #btt2 {
@@ -14,7 +23,7 @@ header {
     padding: 0 20px;
     font-size: 1.2rem;
     cursor: pointer;
-    background: #67d243;
+    background: #BFFF00;
     transition: 0.8s;
 }
 
@@ -37,7 +46,7 @@ header {
 }
 
 #btt2:hover {
-    background: #67d243;
+    background: #BFFF00;
     color: #000000;
     font-weight: 800;
 }
@@ -90,7 +99,7 @@ header {
     padding: 0 20px;
     font-size: 1.2rem;
     cursor: pointer;
-    background: #67d243;
+    background: #BFFF00;
     transition: 0.8s;
 }
 
@@ -113,7 +122,7 @@ header {
 }
 
 #bt2:hover {
-    background: #67d243;
+    background: #BFFF00;
     color: #000000;
     font-weight: 800;
 }
@@ -176,7 +185,7 @@ header {
 }
 
 .voltar:hover {
-    border-bottom: 3px solid #67d243;
+    border-bottom: 3px solid #BFFF00;
 }
 
 @media (max-width:823px) {

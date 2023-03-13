@@ -1,4 +1,5 @@
 import "./styles.css";
+import logo from "../logo_header.png"
 import { useState } from "react";
 
 
@@ -7,8 +8,10 @@ function LoginComponente() {
 
     return (
         <body>
-            <header>
-                <div className="logo">logo</div>
+            <header className="headerLogin">
+            <div className="logoHeaderLogin">
+                <img src={logo} alt="" />
+            </div>
             </header>
             <section className="login">
                 <div className="forme">
