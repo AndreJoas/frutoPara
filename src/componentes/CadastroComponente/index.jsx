@@ -25,7 +25,7 @@ function CadastroComponente() {
                     <label className="labelCampoCliente">Email</label>
                         <input className="ip" type="senha" placeholder="Ex: cliente@dominio.com"/>
                     <label className="labelCampoCliente">Telefone</label>
-                        <IMaskInput className="ip" type="name"  placeholder="Ex: (XX)XXXXX-XXXX" mask="(00)00000-00000" value={telDefault} onChange={e => newValueTel(e.target.value)} onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}/>
+                        <IMaskInput className="ip" type="name"  placeholder="Ex: (XX)XXXXX-XXXX" mask="(00)00000-0000" value={telDefault} onChange={e => newValueTel(e.target.value)} onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}/>
                     <label className="labelCampoCliente">Endereço</label>
                         <input className="ip" type="senha" placeholder="Ex: Rua, Bairro, Cidade, Num"/>
                     <label className="labelCampoCliente">Senha</label>
