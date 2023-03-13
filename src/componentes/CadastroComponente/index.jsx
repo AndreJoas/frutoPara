@@ -21,15 +21,15 @@ function CadastroComponente() {
                 <h1 className="bem">Olá, cliente! Bem-vindo ao cadastro</h1>
                 <div className="campos">
                     <label className="labelCampoCliente">Nome</label>
-                        <input className="ip" type="name"/>
+                        <input className="ip" type="text"/>
                     <label className="labelCampoCliente">Email</label>
-                        <input className="ip" type="senha" placeholder="Ex: cliente@dominio.com"/>
+                        <input className="ip" type="text" placeholder="Ex: cliente@dominio.com"/>
                     <label className="labelCampoCliente">Telefone</label>
-                        <IMaskInput className="ip" type="name"  placeholder="Ex: (XX)XXXXX-XXXX" mask="(00)00000-0000" value={telDefault} onChange={e => newValueTel(e.target.value)} onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}/>
+                        <IMaskInput className="ip" type="text"  placeholder="Ex: (XX)XXXXX-XXXX" mask="(00)00000-0000" value={telDefault} onChange={e => newValueTel(e.target.value)} onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}/>
                     <label className="labelCampoCliente">Endereço</label>
-                        <input className="ip" type="senha" placeholder="Ex: Rua, Bairro, Cidade, Num"/>
+                        <input className="ip" type="text" placeholder="Ex: Rua, Bairro, Cidade, Num"/>
                     <label className="labelCampoCliente">Senha</label>
-                        <input className="ip" type="senha" placeholder="Senha"/>
+                        <input className="ip" type="password" placeholder="Senha"/>
                 </div>
                 <a href="/loginPage"><button className="entrar">Entrar</button></a>
             </div>
