@@ -1,6 +1,16 @@
+.lincagem{
+    max-width: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+}
+
 .carde{
     max-width: 100%;
-    width: 70%;
+    width: 95%;
     display: flex;
     flex-direction: column;
     justify-content: center;
