@@ -1,26 +1,35 @@
 
 import "./styles.css";
 import { TbArrowBarLeft } from "react-icons/tb";
+import logo from "../logo_header.png";
+import { IMaskInput } from "react-imask";
+import { useState } from "react";
 
 function CadastroComponente() {
+    const [telDefault, newValueTel] = useState("")
+    console.warn(telDefault)
+
     return (
         <body>
-        <header>
-            <div className="logo">logo</div>
+        <header className="headerCadastro">
+            <div className="logoHeaderCadastro">
+                <img src={logo} alt="" />
+            </div>
         </header>
-        <section className="login" style={{marginTop:"-0.1rem"}}>
-            <div className="forme" style={{ width:"100%", height:"29rem"}}>
-                <h1 className="bem">Bem vindo ao Cadastro</h1>
-                <div className="perfil">
-                    <button id="bt"><a href="/cadastroPage" style={{textDecoration:"none", color:"#000000"}}>Cliente/PF</a></button>
-                    <button id="bt2" ><a href="/lojacadastroPage" style={{textDecoration:"none", color:"#000000"}}>Loja/PJ</a></button>
-                </div>
+        <section className="loginCliente">
+            <div className="forme">
+                <h1 className="bem">Olá, cliente! Bem-vindo ao cadastro</h1>
                 <div className="campos">
-                    <input className="ip" type="name"  placeholder="nome"/>
-                    <input className="ip" type="senha" placeholder="Email"/>
-                    <input className="ip" type="name"  placeholder="Telefone"/>
-                    <input className="ip" type="senha" placeholder="Endereço"/>
-                    <input className="ip" type="senha" placeholder="Senha"/>
+                    <label className="labelCampoCliente">Nome</label>
+                        <input className="ip" type="name"/>
+                    <label className="labelCampoCliente">Email</label>
+                        <input className="ip" type="senha" placeholder="Ex: cliente@dominio.com"/>
+                    <label className="labelCampoCliente">Telefone</label>
+                        <IMaskInput className="ip" type="name"  placeholder="Ex: (XX)XXXXX-XXXX" mask="(00)00000-00000" value={telDefault} onChange={e => newValueTel(e.target.value)} onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}/>
+                    <label className="labelCampoCliente">Endereço</label>
+                        <input className="ip" type="senha" placeholder="Ex: Rua, Bairro, Cidade, Num"/>
+                    <label className="labelCampoCliente">Senha</label>
+                        <input className="ip" type="senha" placeholder="Senha"/>
                 </div>
                 <a href="/loginPage"><button className="entrar">Entrar</button></a>
             </div>

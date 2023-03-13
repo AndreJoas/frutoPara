@@ -1,37 +1,80 @@
 
-#bt33 {
-    max-width: 30%;
-    width: 50%;
-    height: 2rem;
+* {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #ffffff;
+}
+
+.loginCliente{
+    display: flex;
+    width: 100%;
+    height: 90%;
+    margin-top: 0.7rem;
+    justify-content: center;
+    align-items: center;
+}
+.headerCadastro{
+    width: 100%;
+    display: flex;
+    height: 50%;
+}
+.logoHeaderCadastro{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.logoHeaderCadastro > img{
+    width: 10%;
+}
+.forme{
+    display: flex;
+    width:100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.ip{
     border: none;
+    border-bottom: 2px #e9a804 solid;
+    max-width: 100%;
+    width: 64%;
+    height: 2rem;
     border-radius: 6px;
     padding: 0 20px;
     font-size: 1.2rem;
     cursor: pointer;
-    background: #67d243;
+    outline: none;
     transition: 0.8s;
 }
-
-#bt22 {
-    max-width: 30%;
-    width: 50%;
-    height: 2rem;
+.entrar {
+    max-width: 100%;
+    width: 100%;
+    height: 2.5rem;
     border: none;
     border-radius: 6px;
-    padding: 0 20px;
+    padding: 0 40px;
     font-size: 1.2rem;
     cursor: pointer;
+    background: #e9a804;
     transition: 0.8s;
+    color: #ffffff;
+    margin-top: 1.5rem;
+    font-weight: 400;
+}
+.ip:hover{
+    border-bottom: 2px #FFBB0D solid;
+}
+.entrar:hover {
+    background: #FFBB0D;
 }
 
-#bt22:hover {
-    background: #16d516;
-    color: #f7f7f7;
-    font-weight: 800;
-}
-
-#bt33:hover {
-    background: #67d243;
-    color: #000000;
-    font-weight: 800;
+.labelCampoCliente{
+    display: flex;
+    justify-content: flex-start;
+    width: 64%  ;
 }

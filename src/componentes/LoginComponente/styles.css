@@ -13,7 +13,18 @@
 .logoHeaderLogin > img{
     width: 10%;
 }
-
+.ip{
+    border: none;
+    border-bottom: 2px #e9a804 solid;
+    max-width: 100%;
+    width: 64%;
+    height: 2rem;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.8s;
+}
 #btt2 {
     max-width: 30%;
     width: 50%;
@@ -136,39 +147,6 @@
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
-}
-
-.ip {
-    max-width: 100%;
-    width: 64%;
-    height: 1.7rem;
-    border: solid 2px #C4C4C4;
-    border-radius: 6px;
-    padding: 0 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: 0.8s;
-
-}
-
-.entrar {
-    max-width: 100%;
-    width: 100%;
-    height: 1.8rem;
-    border: none;
-    border-radius: 6px;
-    padding: 0 40px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    background: #844CB1;
-    transition: 0.8s;
-    color: #000000;
-    margin-top: 1.5rem;
-    font-weight: 400;
-}
-
-.entrar:hover {
-    font-weight: 800;
 }
 
 .voltar {
