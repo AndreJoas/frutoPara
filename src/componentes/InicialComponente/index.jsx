@@ -18,8 +18,8 @@ function InicialComponente() {
                 <div className="div1">
                     <div className="textos">
                             <h1>Ir para a feira sem sair de casa?</h1>
-                            <h1 className="p1">Cadastre-se e compre frutas,</h1>
-                            <h1 className="p1">legumes e muito mais no seu conforto!</h1>
+                            <h1 className="p1">Cadastre-se e compre frutas, legumes</h1>
+                            <h1 className="p1">e muito mais no seu conforto!</h1>
                     </div>
                     <div className="botoes2">
                         <a href="/cadastroPage"><button className="bt2">Cadastrar</button></a>
