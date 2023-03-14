@@ -110,13 +110,13 @@ section{
     border: none;
     outline: none;
     cursor: pointer;
-    background: #e9a804;
+    background: #C4DC79;
     color: #ffffff;
     font-weight: 800;
     transition: 0.3s;
 }
 .bt2:hover{
-    background: #FFBB0D;
+    background: #B1D34B;
     font-weight: 800;
 }
 .bt3{
@@ -128,15 +128,15 @@ section{
     outline: none;
     cursor: pointer;
     background: transparent;
-    color: #e9a804;
+    color: #C4DC79;
     font-weight: 800;
     transition: 0.3s;
-    border-bottom: 2px #e9a804 solid;
+    border-bottom: 2px #C4DC79 solid;
     border-radius: 5px;
 }
 .bt3:hover{
-    border-bottom: 2px #FFBB0D solid;
-    color: #FFBB0D;
+    border-bottom: 2px #B1D34B solid;
+    color: #B1D34B;
 }
 .div2{
     max-width: 30%;

@@ -9,7 +9,7 @@
     align-items: center;
     border-radius: 5px;
     padding: 4px;
-    border: 2px solid #FFBB0D;
+    border: 2px solid #B1D34B;
 
 }
 
@@ -26,7 +26,7 @@
 }
 
 .lista::-webkit-scrollbar-thumb {
-    background-color: #FFBB0D;
+    background-color: #B1D34B;
     /* color of the scroll thumb */
     border-radius: 50px;
     width: 100px;

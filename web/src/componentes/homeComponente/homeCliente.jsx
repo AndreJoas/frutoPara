@@ -1,25 +1,27 @@
 // Responsivo
 
-import Destaques from "../DestaquesComponente"
-import Procurando from "../procurandoComponente"
+import Destaques from "../DestaquesComponente";
+import Procurando from "../procurandoComponente";
 import wel from "../homeComponente/w.svg";
 import manga1 from "../homeComponente/E1.png";
 import manga2 from "../homeComponente/E2.png";
-import loja from "../homeComponente/lojas.svg"
+import loja from "../homeComponente/lojas.svg";
+import { useNavigate } from "react-router-dom";
 
 
 import "./styles.css"
 import ListaLoja from "../listaLojaComponente";
 
 export default function HomeCliente() {
+    const navigate = useNavigate();
     return (
         <body className="cliente">
             <header>
                 <div className="logo">logo</div>
                 <div className="headerCenter">
-                    <a href=""><h3>Lojas</h3></a>
-                    <a href=""><h3>Categoria</h3></a>
-                    <a href="/lojacadastroPage"><h3>Cadastrar Loja</h3></a>
+                    <a onClick={ e => navigate("")}><h3>Lojas</h3></a>
+                    <a onClick={ e => navigate("")}><h3>Categoria</h3></a>
+                    <a onClick={ e => navigate("/lojacadastroPage")}><h3>Cadastrar Loja</h3></a>
                 </div>
             </header>
             <section className="sessao">

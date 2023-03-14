@@ -40,14 +40,14 @@ body {
 }
 .ip{
     border: none;
-    border-bottom: 2px #e9a804 solid;
+    border-bottom: 2px #C4DC79 solid;
     max-width: 100%;
     width: 64%;
     height: 2rem;
     border-radius: 6px;
     padding: 0 20px;
     font-size: 1.2rem;
-    cursor: pointer;
+    cursor: text;
     outline: none;
     transition: 0.8s;
 }
@@ -60,21 +60,45 @@ body {
     padding: 0 40px;
     font-size: 1.2rem;
     cursor: pointer;
-    background: #e9a804;
+    background: #C4DC79;
     transition: 0.8s;
     color: #ffffff;
     margin-top: 1.5rem;
     font-weight: 400;
 }
+.voltar {
+    max-width: 100%;
+    width: 100%;
+    height: 2.5rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: none;
+    transition: 0.8s;
+    color: #C4DC79;
+    font-weight: 400;
+    text-decoration-line: underline; 
+}
+
+.voltar:hover {
+    color: #B1D34B;
+}
 .ip:hover{
-    border-bottom: 2px #FFBB0D solid;
+    border-bottom: 2px #B1D34B solid;
 }
 .entrar:hover {
-    background: #FFBB0D;
+    background: #B1D34B;
 }
 
 .labelCampoCliente{
     display: flex;
     justify-content: flex-start;
     width: 64%  ;
+}
+
+#togglePass{
+    display: flex;
+    justify-content: flex-start;
 }

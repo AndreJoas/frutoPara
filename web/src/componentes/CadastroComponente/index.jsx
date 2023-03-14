@@ -4,10 +4,62 @@ import { TbArrowBarLeft } from "react-icons/tb";
 import logo from "../logo_header.png";
 import { IMaskInput } from "react-imask";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CadastroComponente() {
-    const [telDefault, newValueTel] = useState("")
-    console.warn(telDefault)
+
+    const [numTelefone, newValueTel] = useState("");
+    const [nome, newValueNome] = useState("");
+    const [numCPF, newValueCPF] = useState("");
+    const [email, newValueEmail] = useState("");
+    const [endereco, newValueEndereco] = useState("");
+    const [senha, newValueSenha] = useState("");
+    const [showPass, setShowPass] = useState(false);
+    const [error, setError] = useState(true);
+    const navigate = useNavigate();
+
+    let msg = "";
+
+    let camposCadastro = {
+        "Nome": nome, 
+        "Telefone": numTelefone, 
+        "CPF": numCPF.replace(/[^a-zA-Z0-9 ]/g, ''), 
+        "Email": email, 
+        "Endereço": endereco, 
+        "Senha": senha,
+        "Tipo" : 2
+    }
+    const viewPassword = () => {
+        setShowPass(!showPass);
+    }
+    const validateCadastro = () => {
+        for(let i in Object.keys(camposCadastro)){
+            let keyCampo = Object.keys(camposCadastro)[i];
+            let valueCampo = camposCadastro[keyCampo];
+            
+            if(!valueCampo){
+                msg += `CAMPO '${keyCampo}' É OBRIGATÓRIO.\n`;
+
+            }else if(keyCampo == 'CPF'){
+                if(valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 11){
+                    msg += "CAMPO 'CPF' DEVE TER 11 DIGITOS.\n"
+                }
+
+            }else if(keyCampo == 'Telefone'){
+                if(valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 11){
+                    msg += "CAMPO 'Telefone' DEVE TER 11 DIGITOS.\n"
+                }
+            }
+        }
+        if(!msg){
+            setError(false);
+            navigate("/loginPage");
+        }else{
+            setError(true);
+            alert(msg)
+            msg = ""
+        }
+    }
 
     return (
         <body>
@@ -21,20 +73,70 @@ function CadastroComponente() {
                 <h1 className="bem">Olá, cliente! Bem-vindo ao cadastro</h1>
                 <div className="campos">
                     <label className="labelCampoCliente">Nome</label>
-                        <IMaskInput className="ip" type="text" onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}/>
+                        <IMaskInput 
+                            className="ip" 
+                            type="text" 
+                            placeholder="Nome"
+                            value={nome} 
+                            onChange={e => newValueNome(e.target.value)} 
+                            onKeyPress={(e) => !/[A-Za-z ]/.test(e.key) && e.preventDefault()}
+                        />
+                    <label className="labelCampoCliente">CPF</label>
+                        <IMaskInput 
+                            className="ip" 
+                            type="text" 
+                            placeholder="Ex: XXX.XXX.XXX-XX" 
+                            mask="000.000.000-00" 
+                            value={numCPF} 
+                            onChange={e => newValueCPF(e.target.value)} 
+                            onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
+                        />
                     <label className="labelCampoCliente">Email</label>
-                        <IMaskInput className="ip" type="text" placeholder="Ex: cliente@dominio.com"/>
+                        <IMaskInput 
+                            className="ip" 
+                            type="text" 
+                            placeholder="Ex: cliente@dominio.com"
+                            value={email} 
+                            onChange={e => newValueEmail(e.target.value)} 
+                        />
                     <label className="labelCampoCliente">Telefone</label>
-                        <IMaskInput className="ip" type="text"  placeholder="Ex: (XX)XXXXX-XXXX" mask="(00)00000-0000" value={telDefault} onChange={e => newValueTel(e.target.value)} onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}/>
+                        <IMaskInput 
+                            className="ip" 
+                            type="text"  
+                            placeholder="Ex: (XX)XXXXX-XXXX" 
+                            mask="(00)00000-0000" 
+                            value={numTelefone} 
+                            onChange={e => newValueTel(e.target.value)} 
+                            onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
+                        />
                     <label className="labelCampoCliente">Endereço</label>
-                        <IMaskInput className="ip" type="text" placeholder="Ex: Rua, Bairro, Cidade, Num"/>
+                        <IMaskInput 
+                            className="ip" 
+                            type="text" 
+                            placeholder="Ex: Rua, Bairro, Cidade, Num"
+                            value={endereco} 
+                            onChange={e => newValueEndereco(e.target.value)} 
+                        />
                     <label className="labelCampoCliente">Senha</label>
-                        <IMaskInput className="ip" type="password" placeholder="Senha"/>
+                        <IMaskInput 
+                            className="ip" 
+                            type={showPass ? "text" : "password"} 
+                            placeholder="Senha"
+                            value={senha} 
+                            onChange={e => newValueSenha(e.target.value)} 
+                        />
+                    <label className="labelCampoCliente">
+                        <IMaskInput 
+                            type="checkbox" 
+                            onClick={viewPassword}
+                        />
+                        {showPass ? "Esconder senha" : "Mostrar senha"}
+                    </label>
                 </div>
-                <a href="/loginPage"><button className="entrar">Entrar</button></a>
+                <a><button className="entrar" onClick={validateCadastro}>Entrar</button></a>
+                <a><button onClick={ e => navigate("/inicioPage")} className="voltar">Voltar</button></a>
             </div>
         </section>
-        <a href="/inicioPage" className="voltar">Voltar</a>
     </body>
         
     )

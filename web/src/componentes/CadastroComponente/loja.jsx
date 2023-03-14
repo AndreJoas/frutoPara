@@ -1,7 +1,9 @@
-import "./styles.css"
+import "./styles.css";
+import { useNavigate } from "react-router-dom";
 
 
 function Loja(){
+    const navigate = useNavigate();
     return(
         <body>
         <header>
@@ -11,8 +13,8 @@ function Loja(){
             <div className="forme" style={{ width:"100%", height:"29rem"}}>
                 <h1 className="bem">Bem vindo ao Cadastro</h1>
                 <div className="perfil">
-                    <button id="bt22"><a href="/cadastroPage" style={{textDecoration:"none", color:"#000000"}}>Cliente/PF</a></button>
-                    <button id="bt33" ><a href="/lojacadastroPage" style={{textDecoration:"none", color:"#000000"}}>Loja/PJ</a></button>
+                    <button id="bt22"><a onClick={ e => navigate("/cadastroPage")} style={{textDecoration:"none", color:"#000000"}}>Cliente/PF</a></button>
+                    <button id="bt33" ><a onClick={ e => navigate("/lojacadastroPage")} style={{textDecoration:"none", color:"#000000"}}>Loja/PJ</a></button>
                 </div>
                 <div className="campos">
                     <input className="ip" type="name"  placeholder="nome"/>
@@ -21,10 +23,10 @@ function Loja(){
                     <input className="ip" type="senha" placeholder="Endereço"/>
                     <input className="ip" type="senha" placeholder="Senha"/>
                 </div>
-                <a href="/lojaLoginPage"><button className="entrar">Entrar</button></a>
+                <a onClick={ e => navigate("/lojaLoginPage")}><button className="entrar">Entrar</button></a>
             </div>
         </section>
-        <a href="/inicioPage" className="voltar">Voltar</a>
+        <a onClick={ e => navigate("/inicioPage")} className="voltar">Voltar</a>
     </body>
     )
 }
