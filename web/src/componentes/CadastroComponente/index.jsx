@@ -147,7 +147,7 @@ function CadastroComponente() {
                             {showPass ? "Esconder senha" : "Mostrar senha"}
                         </label>
                     </div>
-                    <a><button className="entrar" onClick={validateCadastro}>Entrar</button></a>
+                    <a><button className="entrar" onClick={validateCadastro}>Cadastrar</button></a>
                     <a><button onClick={e => navigate("/inicioPage")} className="voltar">Voltar</button></a>
                 </div>
             </section>
