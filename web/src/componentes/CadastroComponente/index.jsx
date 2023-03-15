@@ -6,6 +6,7 @@ import { IMaskInput } from "react-imask";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {addPessoa} from "../../scripts/person.js";
+import {Base64} from 'js-base64';
 
 function CadastroComponente() {
 
@@ -20,15 +21,23 @@ function CadastroComponente() {
     const navigate = useNavigate();
     let msg = "";
 
-    console.warn("API >>>> ", addPessoa)
-
     let camposCadastro = {
+        "Parent_codigo": 1,
+        "Nome": nome,
+        "CPF": numCPF.replace(/[^a-zA-Z0-9 ]/g, ''),
+        "Email": email,
+        "Endereco": endereco,
+        "Senha": senha,
+        "Telefone": numTelefone
+    }
+
+    let envioDadosBD = {
         "parent_codigo": 1,
         "nome": nome,
         "cpf": numCPF.replace(/[^a-zA-Z0-9 ]/g, ''),
         "email": email,
         "endereco": endereco,
-        "senha": senha,
+        "senha": Base64.encode(senha),
         "telefone": numTelefone
     }
 
@@ -44,12 +53,12 @@ function CadastroComponente() {
             if (!valueCampo) {
                 msg += `Campo '${keyCampo}' é obrigatório.\n`;
 
-            } else if (keyCampo == 'cpf') {
+            } else if (keyCampo == 'CPF') {
                 if (valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 11) {
                     msg += "Campo 'CPF' deve ter 11 digitos.\n"
                 }
 
-            } else if (keyCampo == 'telefone') {
+            } else if (keyCampo == 'Telefone') {
                 if (valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 11) {
                     msg += "Campo 'Telefone' deve ter 11 digitos.\n"
                 }
@@ -65,7 +74,7 @@ function CadastroComponente() {
 
         if (!msg) {
             setError(false);
-            addPessoa(camposCadastro);
+            addPessoa(envioDadosBD);
             navigate("/loginPage");
         } else {
             setError(true);
@@ -73,7 +82,7 @@ function CadastroComponente() {
             msg = ""
         }
     }
-    console.warn(camposCadastro)
+
     return (
         <body>
             <header className="headerCadastro">

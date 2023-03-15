@@ -193,9 +193,9 @@ module.exports = {
            });
         });
     },
-    getOnePerson: (codigo) => {
+    getOnePerson: (email) => {
         return new Promise((resolve, reject) => {
-           db.query("SELECT * FROM persons WHERE codigo = ?", [codigo], (err, res) =>{
+           db.query("SELECT * FROM persons p WHERE p.email = ?", [email], (err, res) =>{
                 if(err){
                     reject(err);
                     return;

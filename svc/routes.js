@@ -21,7 +21,7 @@ router.delete('/store/delete/:codigo', productController.deleteStore);
 //PERSONS
 router.get('/persons/findAll', productController.findAllPersons);
 router.get('/persons/findSeller/:cnpj', productController.findSeller);
-router.get('/persons/getOne/:codigo', productController.getOnePerson);
+router.get('/persons/getOne/:email', productController.getOnePerson);
 router.post('/persons/insert/:tipo', productController.insertPerson);
 router.put('/persons/update/:codigo/:tipo', productController.updatePerson);
 router.delete('/persons/delete/:codigo', productController.deletePerson);

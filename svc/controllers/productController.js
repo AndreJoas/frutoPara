@@ -272,8 +272,8 @@ module.exports = {
             result:{}
         };
 
-        let codigo = req.params.codigo;
-        let person = await productService.getOnePerson(codigo);
+        let email = req.params.email;
+        let person = await productService.getOnePerson(email);
 
         if(person){
             json.result = person;
