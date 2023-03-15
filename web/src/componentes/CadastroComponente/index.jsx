@@ -44,12 +44,12 @@ function CadastroComponente() {
             if (!valueCampo) {
                 msg += `Campo '${keyCampo}' é obrigatório.\n`;
 
-            } else if (keyCampo == 'CPF') {
+            } else if (keyCampo == 'cpf') {
                 if (valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 11) {
                     msg += "Campo 'CPF' deve ter 11 digitos.\n"
                 }
 
-            } else if (keyCampo == 'Telefone') {
+            } else if (keyCampo == 'telefone') {
                 if (valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 11) {
                     msg += "Campo 'Telefone' deve ter 11 digitos.\n"
                 }
