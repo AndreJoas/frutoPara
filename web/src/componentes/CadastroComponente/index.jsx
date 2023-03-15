@@ -5,6 +5,7 @@ import logo from "../logo_header.png";
 import { IMaskInput } from "react-imask";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {addPessoa} from "../../scripts/person.js";
 
 function CadastroComponente() {
 
@@ -17,128 +18,141 @@ function CadastroComponente() {
     const [showPass, setShowPass] = useState(false);
     const [error, setError] = useState(true);
     const navigate = useNavigate();
-
     let msg = "";
 
+    console.warn("API >>>> ", addPessoa)
+
     let camposCadastro = {
-        "Nome": nome, 
-        "Telefone": numTelefone, 
-        "CPF": numCPF.replace(/[^a-zA-Z0-9 ]/g, ''), 
-        "Email": email, 
-        "Endereço": endereco, 
-        "Senha": senha,
-        "Tipo" : 2
+        "parent_codigo": 1,
+        "nome": nome,
+        "cpf": numCPF.replace(/[^a-zA-Z0-9 ]/g, ''),
+        "email": email,
+        "endereco": endereco,
+        "senha": senha,
+        "telefone": numTelefone
     }
+
     const viewPassword = () => {
         setShowPass(!showPass);
     }
+
     const validateCadastro = () => {
-        for(let i in Object.keys(camposCadastro)){
+        for (let i in Object.keys(camposCadastro)) {
             let keyCampo = Object.keys(camposCadastro)[i];
             let valueCampo = camposCadastro[keyCampo];
-            
-            if(!valueCampo){
-                msg += `CAMPO '${keyCampo}' É OBRIGATÓRIO.\n`;
 
-            }else if(keyCampo == 'CPF'){
-                if(valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 11){
-                    msg += "CAMPO 'CPF' DEVE TER 11 DIGITOS.\n"
+            if (!valueCampo) {
+                msg += `Campo '${keyCampo}' é obrigatório.\n`;
+
+            } else if (keyCampo == 'CPF') {
+                if (valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 11) {
+                    msg += "Campo 'CPF' deve ter 11 digitos.\n"
                 }
 
-            }else if(keyCampo == 'Telefone'){
-                if(valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 11){
-                    msg += "CAMPO 'Telefone' DEVE TER 11 DIGITOS.\n"
+            } else if (keyCampo == 'Telefone') {
+                if (valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 11) {
+                    msg += "Campo 'Telefone' deve ter 11 digitos.\n"
                 }
             }
         }
-        if(!msg){
+
+        //verifica se contem pelo menos 1 letra maiuscula e 1 número
+        var regex = /^(?=.*[A-Z])(?=.*\d).+$/;
+
+        if (!regex.test(senha) || senha.length < 4){
+            msg += "A senha não atende os pré-requisitos.\n";
+        }
+
+        if (!msg) {
             setError(false);
+            addPessoa(camposCadastro);
             navigate("/loginPage");
-        }else{
+        } else {
             setError(true);
-            alert(msg)
+            alert(msg);
             msg = ""
         }
     }
-
+    console.warn(camposCadastro)
     return (
         <body>
-        <header className="headerCadastro">
-            <div className="logoHeaderCadastro">
-                <img src={logo} alt="" />
-            </div>
-        </header>
-        <section className="loginCliente">
-            <div className="forme">
-                <h1 className="bem">Olá, cliente! Bem-vindo ao cadastro</h1>
-                <div className="campos">
-                    <label className="labelCampoCliente">Nome</label>
-                        <IMaskInput 
-                            className="ip" 
-                            type="text" 
+            <header className="headerCadastro">
+                <div className="logoHeaderCadastro">
+                    <img src={logo} alt="" />
+                </div>
+            </header>
+            <section className="loginCliente">
+                <div className="forme">
+                    <h1 className="bem">Olá, cliente! Bem-vindo ao cadastro</h1>
+                    <div className="campos">
+                        <label className="labelCampoCliente">Nome</label>
+                        <IMaskInput
+                            className="ip"
+                            type="text"
                             placeholder="Nome"
-                            value={nome} 
-                            onChange={e => newValueNome(e.target.value)} 
+                            value={nome}
+                            onChange={e => newValueNome(e.target.value)}
                             onKeyPress={(e) => !/[A-Za-z ]/.test(e.key) && e.preventDefault()}
                         />
-                    <label className="labelCampoCliente">CPF</label>
-                        <IMaskInput 
-                            className="ip" 
-                            type="text" 
-                            placeholder="Ex: XXX.XXX.XXX-XX" 
-                            mask="000.000.000-00" 
-                            value={numCPF} 
-                            onChange={e => newValueCPF(e.target.value)} 
+                        <label className="labelCampoCliente">CPF</label>
+                        <IMaskInput
+                            className="ip"
+                            type="text"
+                            placeholder="Ex: XXX.XXX.XXX-XX"
+                            mask="000.000.000-00"
+                            value={numCPF}
+                            onChange={e => newValueCPF(e.target.value)}
                             onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
                         />
-                    <label className="labelCampoCliente">Email</label>
-                        <IMaskInput 
-                            className="ip" 
-                            type="text" 
+                        <label className="labelCampoCliente">Email</label>
+                        <IMaskInput
+                            className="ip"
+                            type="text"
                             placeholder="Ex: cliente@dominio.com"
-                            value={email} 
-                            onChange={e => newValueEmail(e.target.value)} 
+                            value={email}
+                            onChange={e => newValueEmail(e.target.value)}
                         />
-                    <label className="labelCampoCliente">Telefone</label>
-                        <IMaskInput 
-                            className="ip" 
-                            type="text"  
-                            placeholder="Ex: (XX)XXXXX-XXXX" 
-                            mask="(00)00000-0000" 
-                            value={numTelefone} 
-                            onChange={e => newValueTel(e.target.value)} 
+                        <label className="labelCampoCliente">Telefone</label>
+                        <IMaskInput
+                            className="ip"
+                            type="text"
+                            placeholder="Ex: (XX)XXXXX-XXXX"
+                            mask="(00)00000-0000"
+                            value={numTelefone}
+                            onChange={e => newValueTel(e.target.value)}
                             onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
                         />
-                    <label className="labelCampoCliente">Endereço</label>
-                        <IMaskInput 
-                            className="ip" 
-                            type="text" 
+                        <label className="labelCampoCliente">Endereço</label>
+                        <IMaskInput
+                            className="ip"
+                            type="text"
                             placeholder="Ex: Rua, Bairro, Cidade, Num"
-                            value={endereco} 
-                            onChange={e => newValueEndereco(e.target.value)} 
+                            value={endereco}
+                            onChange={e => newValueEndereco(e.target.value)}
                         />
-                    <label className="labelCampoCliente">Senha</label>
-                        <IMaskInput 
-                            className="ip" 
-                            type={showPass ? "text" : "password"} 
+                        <label className="labelCampoCliente">Senha</label>
+                        <IMaskInput
+                            className="ip"
+                            type={showPass ? "text" : "password"}
                             placeholder="Senha"
-                            value={senha} 
-                            onChange={e => newValueSenha(e.target.value)} 
+                            value={senha}
+                            onChange={e => newValueSenha(e.target.value)}
                         />
-                    <label className="labelCampoCliente">
-                        <IMaskInput 
-                            type="checkbox" 
-                            onClick={viewPassword}
-                        />
-                        {showPass ? "Esconder senha" : "Mostrar senha"}
-                    </label>
+                        <label className="infoSenha">A senha deve conter no minimo 4 caracteres, com pelo menos 1 letra maiúscula e 1 número.</label>
+                        <label className="labelCampoCliente">
+                            <IMaskInput
+                                type="checkbox"
+                                onClick={viewPassword}
+                            />
+                            {showPass ? "Esconder senha" : "Mostrar senha"}
+                        </label>
+                    </div>
+                    <a><button className="entrar" onClick={validateCadastro}>Entrar</button></a>
+                    <a><button onClick={e => navigate("/inicioPage")} className="voltar">Voltar</button></a>
                 </div>
-                <a><button className="entrar" onClick={validateCadastro}>Entrar</button></a>
-                <a><button onClick={ e => navigate("/inicioPage")} className="voltar">Voltar</button></a>
-            </div>
-        </section>
-    </body>
-        
+            </section>
+        </body>
+
     )
 };
 

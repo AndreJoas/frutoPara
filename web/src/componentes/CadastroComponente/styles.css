@@ -95,7 +95,13 @@ body {
 .labelCampoCliente{
     display: flex;
     justify-content: flex-start;
-    width: 64%  ;
+    width: 64% ;
+}
+.infoSenha{
+    display: flex;
+    justify-content: flex-start;
+    width: 64%;
+    font-size: 70%;
 }
 
 #togglePass{

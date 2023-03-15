@@ -208,10 +208,10 @@ module.exports = {
            });
         });
     },
-    insertPerson: (parent_codigo, nome, cpf, usuario, tipo) => {
+    insertPerson: (parent_codigo, nome, cpf, email, endereco, senha, telefone, tipo) => {
         return new Promise((resolve, reject) => {
-            db.query("INSERT INTO persons (parent_codigo, nome, cpf, usuario, tipo) VALUES (?, ?, ?, ?, ?)", 
-                [parent_codigo, nome, cpf, usuario, tipo], 
+            db.query("INSERT INTO persons (parent_codigo, nome, cpf, email, endereco, senha, telefone, tipo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", 
+                [parent_codigo, nome, cpf, email, endereco, senha, telefone, tipo], 
                 (err, res) =>{
                 
                 if(err){
