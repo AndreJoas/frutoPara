@@ -5,8 +5,9 @@ import logo from "../logo_header.png";
 import { IMaskInput } from "react-imask";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {addPessoa} from "../../scripts/person.js";
-import {Base64} from 'js-base64';
+import { addPessoa } from "../../scripts/person.js";
+import { buscaLogin } from "../../scripts/person.js";
+import { Base64 } from 'js-base64';
 
 function CadastroComponente() {
 
@@ -17,7 +18,6 @@ function CadastroComponente() {
     const [endereco, newValueEndereco] = useState("");
     const [senha, newValueSenha] = useState("");
     const [showPass, setShowPass] = useState(false);
-    const [error, setError] = useState(true);
     const navigate = useNavigate();
     let msg = "";
 
@@ -46,42 +46,56 @@ function CadastroComponente() {
     }
 
     const validateCadastro = () => {
-        for (let i in Object.keys(camposCadastro)) {
-            let keyCampo = Object.keys(camposCadastro)[i];
-            let valueCampo = camposCadastro[keyCampo];
+        buscaLogin(email).then((data) => {
+            const jsonRequest = data['result'];
 
-            if (!valueCampo) {
-                msg += `Campo '${keyCampo}' é obrigatório.\n`;
+            for (let i in Object.keys(camposCadastro)) {
+                let keyCampo = Object.keys(camposCadastro)[i];
+                let valueCampo = camposCadastro[keyCampo];
 
-            } else if (keyCampo == 'CPF') {
-                if (valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 11) {
-                    msg += "Campo 'CPF' deve ter 11 digitos.\n"
-                }
+                if (!valueCampo) {
+                    msg += `Campo '${keyCampo}' é obrigatório.\n`;
 
-            } else if (keyCampo == 'Telefone') {
-                if (valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 11) {
-                    msg += "Campo 'Telefone' deve ter 11 digitos.\n"
+                } else if (keyCampo == 'CPF') {
+                    if (valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 11) {
+                        msg += "Campo 'CPF' deve ter 11 digitos.\n"
+                    }
+
+                } else if (keyCampo == 'Telefone') {
+                    if (valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 11) {
+                        msg += "Campo 'Telefone' deve ter 11 digitos.\n"
+                    }
                 }
             }
-        }
 
-        //verifica se contem pelo menos 1 letra maiuscula e 1 número
-        var regex = /^(?=.*[A-Z])(?=.*\d).+$/;
+            if (jsonRequest['email']) {
+                if (jsonRequest['email'] == email) {
+                    msg += "Este e-mail já possui um cadastro, favor inserir outro e-mail.\n"
+                }
+            }else if(email){
+                if (email.indexOf("@") == -1) {
+                    msg += "É obrigatório que o e-mail tenha um dominio. \n";
+                }
+            }
+            //verifica se contem pelo menos 1 letra maiuscula e 1 número
+            var regex = /^(?=.*[A-Z])(?=.*\d).+$/;
 
-        if (!regex.test(senha) || senha.length < 4){
-            msg += "A senha não atende os pré-requisitos.\n";
-        }
+            if (!regex.test(senha) || senha.length < 4) {
+                msg += "A senha não atende os pré-requisitos.\n";
+            }
 
-        if (!msg) {
-            setError(false);
-            addPessoa(envioDadosBD);
-            navigate("/loginPage");
-        } else {
-            setError(true);
-            alert(msg);
-            msg = ""
-        }
+            if (!msg) {
+                addPessoa(envioDadosBD);
+                navigate("/loginPage");
+            } else {
+                alert(msg);
+            }
+        })
+        .catch((error) => {
+            console.error(error);
+        });
     }
+
 
     return (
         <body>

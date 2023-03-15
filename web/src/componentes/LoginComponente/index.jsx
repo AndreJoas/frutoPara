@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IMaskInput } from "react-imask";
 import { buscaLogin } from "../../scripts/person.js";
+import {Base64} from 'js-base64';
 
 
 function LoginComponente() {
@@ -11,16 +12,35 @@ function LoginComponente() {
     const [email, newValueEmail] = useState("");
     const [senha, newValueSenha] = useState("");
     const [showPass, setShowPass] = useState(false);
+    let msg = "";
+    let jsonRequest = "";
 
     const validateLogin = () => {
-        console.warn(email)
-        buscaLogin("email").then((data) => {
-            console.log(data);
-        }).catch((error) => {
-            console.error(error);
-        });
+        if(!email){
+            msg += "Email deve ser preenchido. \n";
+        }else{
+            buscaLogin(email).then((data) => {
+                jsonRequest = data['result'];
+                console.log("json: ",jsonRequest);
+                if(jsonRequest['email']){
+                    if(jsonRequest['senha'] != Base64.encode(senha)){
+                        msg += "Senha incorreta. Favor, tente novamente. \n";
+                    }
+                }else{
+                    msg += "Email inexistente. Realize um cadastro ou tente novamente. \n";
+                }
+                if(!msg){
+                    navigate("/HomeCliente");
+                }else{
+                    alert(msg);
+                    msg = "";
+                }
+            }).catch((error) => {
+                console.error(error);
+            });
+        }
     };
-
+    
 
     const viewPassword = () => {
         setShowPass(!showPass);
