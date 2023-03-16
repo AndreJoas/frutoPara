@@ -1,6 +1,6 @@
 import "./styles.css";
 import image from "./ft.svg"
-import logo from "../logo_header.png"
+import logo from "../logo-header.png"
 import { useNavigate } from "react-router-dom";
 
 function InicialComponente() {

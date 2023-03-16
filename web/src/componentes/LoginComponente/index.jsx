@@ -1,5 +1,5 @@
 import "./styles.css";
-import logo from "../logo_header.png"
+import logo from "../logo-header.png"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IMaskInput } from "react-imask";

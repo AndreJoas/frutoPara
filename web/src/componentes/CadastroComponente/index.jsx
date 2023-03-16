@@ -1,7 +1,7 @@
 
 import "./styles.css";
 import { TbArrowBarLeft } from "react-icons/tb";
-import logo from "../logo_header.png";
+import logo from "../logo-header.png";
 import { IMaskInput } from "react-imask";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
