@@ -35,36 +35,6 @@ function ListaLojaProdutos() {
             
            
             <div className="numero2">
-<<<<<<< HEAD
-                <a className="lincagem"  href="/pageProduto" ><CardLojaProduto /></a>
-                <a className="lincagem"  href="/pageProduto" ><CardLojaProduto /></a>
-                <a className="lincagem"  href="/pageProduto" ><CardLojaProduto /></a>
-                <a className="lincagem"  href="/pageProduto" ><CardLojaProduto /></a>
-            </div>
-            <div className="numero2">
-                <a className="lincagem"   href="/pageProduto"><CardLojaProduto /></a>
-                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
-                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
-                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
-            </div>
-            <div className="numero2">
-                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
-                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
-                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
-                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
-            </div>
-            <div className="numero2">
-                <a className="lincagem"  href="/pageProduto" ><CardLojaProduto /></a>
-                <a className="lincagem"   href="/pageProduto" ><CardLojaProduto /></a>
-                <a className="lincagem"   href="/pageProduto" ><CardLojaProduto /></a>
-                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
-            </div>
-            <div className="numero2">
-                <a className="lincagem"  href="/pageProduto" ><CardLojaProduto /></a>
-                <a className="lincagem"   href="/pageProduto" ><CardLojaProduto /></a>
-                <a className="lincagem"   href="/pageProduto" ><CardLojaProduto /></a>
-                <a className="lincagem" href="/pageProduto"><CardLojaProduto /></a>
-=======
                 <a className="lincagem" onClick={ e => navigate("")}><CardLojaProduto /></a>
                 <a className="lincagem" ><CardLojaProduto /></a>
                 <a className="lincagem" ><CardLojaProduto /></a>
@@ -93,7 +63,6 @@ function ListaLojaProdutos() {
                 <a className="lincagem" ><CardLojaProduto /></a>
                 <a className="lincagem" ><CardLojaProduto /></a>
                 <a className="lincagem" ><CardLojaProduto /></a>
->>>>>>> 2ea4ef38c932e9302f698fd65a20e103efc53837
             </div>
 
         </div>

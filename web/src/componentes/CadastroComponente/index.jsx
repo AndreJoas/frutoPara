@@ -1,12 +1,7 @@
 
 import "./styles.css";
-<<<<<<< HEAD
 // import { TbArrowBarLeft } from "react-icons/tb";
 import logo from "../logo_header.png";
-=======
-import { TbArrowBarLeft } from "react-icons/tb";
-import logo from "../logo-header.png";
->>>>>>> 2ea4ef38c932e9302f698fd65a20e103efc53837
 import { IMaskInput } from "react-imask";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -104,7 +99,6 @@ function CadastroComponente() {
 
     return (
         <body>
-<<<<<<< HEAD
         <header className="headerCadastro">
             <div className="logoHeaderCadastro">
                 <img src={logo} alt="NAO ENCONTROU" />
@@ -124,11 +118,6 @@ function CadastroComponente() {
                         <IMaskInput className="ip" type="text" placeholder="Ex: Rua, Bairro, Cidade, Num"/>
                     <label className="labelCampoCliente">Senha</label>
                         <IMaskInput className="ip" type="password" placeholder="Senha"/>
-=======
-            <header className="headerCadastro">
-                <div className="logoHeaderCadastro">
-                    <img src={logo} alt="" />
->>>>>>> 2ea4ef38c932e9302f698fd65a20e103efc53837
                 </div>
             </header>
             <section className="loginCliente">
