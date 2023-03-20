@@ -16,8 +16,11 @@ function InicialComponente() {
                         <a href="/loginPage"><button className="bt1">Entrar</button></a>
                         <a href="/cadastroPage"><button className="bt1" >Cadastrar</button></a>
                     </div>
+<<<<<<< HEAD
+=======
                     <a onClick={ e => navigate("/loginPage")}><button className="bt1">Entrar</button></a>
                     <a onClick={ e => navigate("/cadastroPage")}><button className="bt1" >Cadastrar</button></a>
+>>>>>>> 2ea4ef38c932e9302f698fd65a20e103efc53837
                 </div>
             </header>
             <section>
