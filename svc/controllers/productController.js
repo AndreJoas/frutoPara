@@ -272,8 +272,8 @@ module.exports = {
             result:{}
         };
 
-        let codigo = req.params.codigo;
-        let person = await productService.getOnePerson(codigo);
+        let email = req.params.email;
+        let person = await productService.getOnePerson(email);
 
         if(person){
             json.result = person;
@@ -296,23 +296,29 @@ module.exports = {
         let parent_codigo  = req.body.parent_codigo;
         let nome           = req.body.nome;
         let cpf            = req.body.cpf;
-        let usuario        = req.body.usuario;
+        let email          = req.body.email;
+        let endereco       = req.body.endereco;
+        let senha          = req.body.senha;
+        let telefone       = req.body.telefone;
         let tipo
 
         tipo = typePersons[typeRequest] != undefined ? typePersons[typeRequest] : "INVALIDO"
-
-        if(parent_codigo && nome && cpf && usuario && tipo != "INVALIDO"){
-            let personID = await productService.insertPerson(parent_codigo, nome, cpf, usuario, tipo);
+        
+        if(parent_codigo && nome && cpf && email && endereco && senha && telefone && tipo != "INVALIDO"){
+            let personID = await productService.insertPerson(parent_codigo, nome, cpf, email, endereco, senha, telefone, tipo);
             json.result = {
                 codigo: personID,
                 parent_codigo,
                 nome,
                 cpf,
-                usuario,
+                email,
+                endereco,
+                senha,
+                telefone,
                 tipo
             };
         }else{
-            json.error = 'Está faltando campo no cadastro ou tipo inválido!'
+            json.error = 'Está faltando campo no cadastro ou tipo inválido!';
         }
 
         res.json(json)

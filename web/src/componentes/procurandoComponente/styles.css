@@ -32,8 +32,10 @@
     max-width: 100%;
     width: 104%;
     height: 2.3rem;
-    border: solid 2px #C4C4C4;
+    border: none;
+    border-bottom: 2px #C4DC79 solid;
     border-radius: 6px;
+    outline: none;
     padding: 0 20px;
     font-size: 1.2rem;
     cursor: pointer;

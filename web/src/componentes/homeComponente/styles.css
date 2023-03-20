@@ -18,7 +18,7 @@ header {
     align-items: center;
     gap: 20px;
     /* border:solid green 2px; */
-    background: #BFFF00;
+    background: #0A5F55;
 }
 
 .logo {
@@ -129,7 +129,6 @@ a {
     align-items: center;
     justify-content: space-between;
     border: none;
-    border-bottom: 3px solid #BFFF00;
 }
 
 .divip {
@@ -141,7 +140,7 @@ a {
     max-width: 100%;
     width: 100%;
     border: none;
-    border-top: 3px solid #BFFF00;
+    border-bottom: 2px #C4DC79 solid;
     border-radius: 6px;
     height: 2.5rem;
     padding: 0 20px;

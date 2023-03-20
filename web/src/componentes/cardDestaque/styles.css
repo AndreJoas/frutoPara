@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-self: center;
     align-items: center;
-    color:#BFFF00;
+    color:#C4DC79;
     cursor: pointer;
     width: 5rem;
     height: 7rem;
@@ -17,8 +17,6 @@
     border-radius: 50%;
 }
 .card:hover{
-    background: #BFFF00;
-    color:#fff;
-    border:solid 1px #000000;
+    color:#B1D34B;
     border-radius: 10px;
 }

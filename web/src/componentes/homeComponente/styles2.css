@@ -1,7 +1,7 @@
 .nomeloja{
     max-width: 100%;
     width: 95%;
-    border: solid 1px #BFFF00;
+    border: solid 1px #0A5F55;
     height: 6rem;
     display: flex;
     flex-direction: row;
@@ -24,7 +24,7 @@
     justify-content: space-around;
     align-items: center;
     font-size: 1.2rem;
-    color: #BFFF00;
+    color: #0A5F55;
     /* color: #fff; */
 }
 .divdados{
@@ -39,16 +39,16 @@
     gap:10px;
     justify-content: center;
     align-items: center;
-    color:#FFBB0D;
+    color:#B1D34B;
 }
 .sobre{
     
-    color:#BFFF00;
+    color:#0A5F55;
 }
 
 
 .selects{
-    /* border: solid 1px #BFFF00; */
+    /* border: solid 1px #0A5F55; */
     display:flex;
     max-width: 100%;
     width: 100%;
@@ -81,7 +81,7 @@
     
 }
 .selec1:hover{
-    background-color: #BFFF00;
+    background-color: #0A5F55;
     color: #fff;
     border-radius: 10px;
 }

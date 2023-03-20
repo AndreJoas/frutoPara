@@ -15,7 +15,7 @@
 }
 .ip{
     border: none;
-    border-bottom: 2px #e9a804 solid;
+    border-bottom: 2px #C4DC79 solid;
     max-width: 100%;
     width: 64%;
     height: 2rem;
@@ -34,7 +34,7 @@
     padding: 0 20px;
     font-size: 1.2rem;
     cursor: pointer;
-    background: #BFFF00;
+    background: #0A5F55;
     transition: 0.8s;
 }
 
@@ -57,7 +57,7 @@
 }
 
 #btt2:hover {
-    background: #BFFF00;
+    background: #0A5F55;
     color: #000000;
     font-weight: 800;
 }
@@ -87,7 +87,7 @@
 }
 
 .bem{
-    color: #0f0e0e;
+    color: #0A5F55;
     font-size: 2rem;
 }
 
@@ -110,7 +110,7 @@
     padding: 0 20px;
     font-size: 1.2rem;
     cursor: pointer;
-    background: #BFFF00;
+    background: #0A5F55;
     transition: 0.8s;
 }
 
@@ -133,7 +133,7 @@
 }
 
 #bt2:hover {
-    background: #BFFF00;
+    background: #0A5F55;
     color: #000000;
     font-weight: 800;
 }
@@ -150,20 +150,23 @@
 }
 
 .voltar {
-    width: 4%;
-    margin-left: 30%;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    display: flex;
-    justify-content: flex-start;
-    transition: 0.6s;
-
-
+    max-width: 100%;
+    width: 100%;
+    height: 2.5rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: none;
+    transition: 0.8s;
+    color: #C4DC79;
+    font-weight: 400;
+    text-decoration-line: underline; 
 }
 
 .voltar:hover {
-    border-bottom: 3px solid #BFFF00;
+    color: #B1D34B;
 }
 
 @media (max-width:823px) {
