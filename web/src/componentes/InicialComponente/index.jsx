@@ -10,25 +10,18 @@ function InicialComponente() {
             <header className="cabeca">
                 <div className="botoes1">
                     <div className="logoHeader">
-                        <img  className="lo" src={logo} alt="" />
+                        <img src={logo} alt="" />
                     </div>
-                    <div className="bot">
-                        <a href="/loginPage"><button className="bt1">Entrar</button></a>
-                        <a href="/cadastroPage"><button className="bt1" >Cadastrar</button></a>
-                    </div>
-<<<<<<< HEAD
-=======
                     <a onClick={ e => navigate("/loginPage")}><button className="bt1">Entrar</button></a>
                     <a onClick={ e => navigate("/cadastroPage")}><button className="bt1" >Cadastrar</button></a>
->>>>>>> 2ea4ef38c932e9302f698fd65a20e103efc53837
                 </div>
             </header>
             <section>
                 <div className="div1">
                     <div className="textos">
-                        <h1>Ir para a feira sem sair de casa?</h1>
-                        <h1 className="p1">Cadastre-se e compre frutas, legumes</h1>
-                        <h1 className="p1">e muito mais no seu conforto!</h1>
+                            <h1>Ir para a feira sem sair de casa?</h1>
+                            <h1 className="p1">Cadastre-se e compre frutas, legumes</h1>
+                            <h1 className="p1">e muito mais no seu conforto!</h1>
                     </div>
                     <div className="botoes2">
                         <a onClick={ e => navigate("/cadastroPage")}><button className="bt2">Cadastrar</button></a>

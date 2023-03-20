@@ -2,7 +2,7 @@ import "./styles.css"
 import bag from "../procurandoComponente/bag.svg";
 import heart from "../procurandoComponente/heart.svg";
 import user from "../procurandoComponente/user.svg";
-// import Lupa from "../procurandoComponente/lupa.svg";
+import Lupa from "../procurandoComponente/lupa.svg";
 
 export default function Procurando() {
     return (
