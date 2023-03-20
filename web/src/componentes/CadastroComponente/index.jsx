@@ -1,6 +1,6 @@
 
 import "./styles.css";
-import { TbArrowBarLeft } from "react-icons/tb";
+// import { TbArrowBarLeft } from "react-icons/tb";
 import logo from "../logo_header.png";
 import { IMaskInput } from "react-imask";
 import { useState } from "react";
@@ -13,7 +13,7 @@ function CadastroComponente() {
         <body>
         <header className="headerCadastro">
             <div className="logoHeaderCadastro">
-                <img src={logo} alt="" />
+                <img src={logo} alt="NAO ENCONTROU" />
             </div>
         </header>
         <section className="loginCliente">

@@ -1,11 +1,11 @@
 import HeaderComponente from "../headerLojacomponente"
-import Procurando from "../procurandoComponente"
+// import Procurando from "../procurandoComponente
 import star from "../homeComponente/S.svg"
 import bag from "../procurandoComponente/bag.svg";
 import heart from "../procurandoComponente/heart.svg";
 import user from "../procurandoComponente/user.svg";
 import "./styles2.css"
-import ListaLoja from "../listaLojaComponente";
+// import ListaLoja from "../listaLojaComponente";
 import ListaLojaProdutos from "../listaLojaProdutoComponente";
 
 export default function HomeLoja() {
@@ -23,7 +23,7 @@ export default function HomeLoja() {
                     </div>
                     <div className="divdados">
                         <div className="dados">
-                            <img src={star} />
+                            <img src={star} alt="NAO ENCONTROU" />
                             <h2>4.7</h2>
                         </div>
                     </div>
@@ -51,6 +51,7 @@ export default function HomeLoja() {
                                 <option value="">3</option>
                                 <option value="">4</option>
                             </select>
+
                         </div>
                         <div className="selec1">
                             <h3>Mais vendido</h3>
@@ -63,9 +64,9 @@ export default function HomeLoja() {
                         </div>
                     </div>
                     <div className="icons3">
-                        <div className="imgcard2"><img src={user} alt="" /></div>
-                        <div className="imgcard2"><img src={heart} alt="" /></div>
-                        <div className="imgcard2"><img src={bag} alt="" /></div>
+                        <div className="imgcard2"><img src={user} alt="NAO ENCONTRADA" /></div>
+                        <div className="imgcard2"><img src={heart} alt="NAO ENCONTRADA" /></div>
+                        <div className="imgcard2"><img src={bag} alt="NAO ENCONTRADA" /></div>
                     </div>
                 </div>
 

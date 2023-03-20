@@ -1,0 +1,13 @@
+.head{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+
+}
+.ajuda{
+    color: #fff;
+    font-size: 1.4rem;
+    max-width: 30%;
+    width: 30%;
+}

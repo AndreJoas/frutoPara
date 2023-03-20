@@ -8,18 +8,20 @@ function InicialComponente() {
             <header className="cabeca">
                 <div className="botoes1">
                     <div className="logoHeader">
-                        <img src={logo} alt="" />
+                        <img  className="lo" src={logo} alt="" />
                     </div>
-                    <a href="/loginPage"><button className="bt1">Entrar</button></a>
-                    <a href="/cadastroPage"><button className="bt1" >Cadastrar</button></a>
+                    <div className="bot">
+                        <a href="/loginPage"><button className="bt1">Entrar</button></a>
+                        <a href="/cadastroPage"><button className="bt1" >Cadastrar</button></a>
+                    </div>
                 </div>
             </header>
             <section>
                 <div className="div1">
                     <div className="textos">
-                            <h1>Ir para a feira sem sair de casa?</h1>
-                            <h1 className="p1">Cadastre-se e compre frutas, legumes</h1>
-                            <h1 className="p1">e muito mais no seu conforto!</h1>
+                        <h1>Ir para a feira sem sair de casa?</h1>
+                        <h1 className="p1">Cadastre-se e compre frutas, legumes</h1>
+                        <h1 className="p1">e muito mais no seu conforto!</h1>
                     </div>
                     <div className="botoes2">
                         <a href="/cadastroPage"><button className="bt2">Cadastrar</button></a>

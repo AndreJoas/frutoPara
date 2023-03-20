@@ -1,4 +1,4 @@
-import CardLoja from "../cardLojaComponente/index2"
+// import CardLoja from "../cardLojaComponente/index2"
 import CardLojaProduto from "../cardLojaProdutoComponente";
 import "./styles.css";
 
@@ -33,34 +33,34 @@ function ListaLojaProdutos() {
             
            
             <div className="numero2">
-                <a className="lincagem" href=""><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
+                <a className="lincagem"  href="/pageProduto" ><CardLojaProduto /></a>
+                <a className="lincagem"  href="/pageProduto" ><CardLojaProduto /></a>
+                <a className="lincagem"  href="/pageProduto" ><CardLojaProduto /></a>
+                <a className="lincagem"  href="/pageProduto" ><CardLojaProduto /></a>
             </div>
             <div className="numero2">
-                <a className="lincagem" href=""><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
+                <a className="lincagem"   href="/pageProduto"><CardLojaProduto /></a>
+                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
+                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
+                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
             </div>
             <div className="numero2">
-                <a className="lincagem" href=""><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
+                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
+                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
+                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
+                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
             </div>
             <div className="numero2">
-                <a className="lincagem" href=""><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
+                <a className="lincagem"  href="/pageProduto" ><CardLojaProduto /></a>
+                <a className="lincagem"   href="/pageProduto" ><CardLojaProduto /></a>
+                <a className="lincagem"   href="/pageProduto" ><CardLojaProduto /></a>
+                <a className="lincagem"  href="/pageProduto"  ><CardLojaProduto /></a>
             </div>
             <div className="numero2">
-                <a className="lincagem" href=""><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
-                <a className="lincagem" ><CardLojaProduto /></a>
+                <a className="lincagem"  href="/pageProduto" ><CardLojaProduto /></a>
+                <a className="lincagem"   href="/pageProduto" ><CardLojaProduto /></a>
+                <a className="lincagem"   href="/pageProduto" ><CardLojaProduto /></a>
+                <a className="lincagem" href="/pageProduto"><CardLojaProduto /></a>
             </div>
 
         </div>

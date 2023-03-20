@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Login, Cadastro , Inicio, Loja,LojaLogin, HomeCliente, HomeLoja} from "../pages/index";
+import { Login, Cadastro , Inicio, Loja,LojaLogin, HomeCliente, HomeLoja, PageProduto} from "../pages/index";
 
 export default function Index() {
     return (
@@ -14,6 +14,7 @@ export default function Index() {
 
                 <Route path="HomeCliente" element={<HomeCliente />} />
                 <Route path="HomeLoja" element={<HomeLoja />} />
+                <Route path="pageProduto" element={<PageProduto />} />
 
         </Routes>
     );
