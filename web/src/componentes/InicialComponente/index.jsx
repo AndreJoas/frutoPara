@@ -8,12 +8,8 @@ function InicialComponente() {
     return (
         <body>
             <header className="cabeca">
-                <div className="botoes1">
-                    <div className="logoHeader">
-                        <img src={logo} alt="" />
-                    </div>
-                    <a onClick={ e => navigate("/loginPage")}><button className="bt1">Entrar</button></a>
-                    <a onClick={ e => navigate("/cadastroPage")}><button className="bt1" >Cadastrar</button></a>
+                <div className="logoHeaderCadastro">
+                    <img src={logo} alt="" />
                 </div>
             </header>
             <section>

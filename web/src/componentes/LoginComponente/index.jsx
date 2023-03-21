@@ -30,6 +30,15 @@ function LoginComponente() {
                     msg += "Email inexistente. Realize um cadastro ou tente novamente. \n";
                 }
                 if(!msg){
+                    let userSession = {
+                        cpf: jsonRequest['cpf'],
+                        nome: jsonRequest['nome'],
+                        endereco: jsonRequest['endereco'],
+                        email: jsonRequest['email'],
+                        telefone: jsonRequest['telefone']
+                    };
+
+                    sessionStorage.setItem("usuario", JSON.stringify(userSession));
                     navigate("/HomeCliente");
                 }else{
                     alert(msg);
