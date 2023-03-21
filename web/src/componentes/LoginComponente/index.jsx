@@ -16,38 +16,34 @@ function LoginComponente() {
     let jsonRequest = "";
 
     const validateLogin = () => {
-        if(!email){
-            msg += "Email deve ser preenchido. \n";
-        }else{
-            buscaLogin(email).then((data) => {
-                jsonRequest = data['result'];
-                console.log("json: ",jsonRequest);
-                if(jsonRequest['email']){
-                    if(jsonRequest['senha'] != Base64.encode(senha)){
-                        msg += "Senha incorreta. Favor, tente novamente. \n";
-                    }
-                }else{
-                    msg += "Email inexistente. Realize um cadastro ou tente novamente. \n";
+        buscaLogin(email).then((data) => {
+            jsonRequest = data['result'];
+            console.log("json: ",jsonRequest);
+            if(jsonRequest['email']){
+                if(jsonRequest['senha'] != Base64.encode(senha)){
+                    msg += "Senha incorreta. Favor, tente novamente. \n";
                 }
-                if(!msg){
-                    let userSession = {
-                        cpf: jsonRequest['cpf'],
-                        nome: jsonRequest['nome'],
-                        endereco: jsonRequest['endereco'],
-                        email: jsonRequest['email'],
-                        telefone: jsonRequest['telefone']
-                    };
+            }else{
+                msg += "Email inexistente. Realize um cadastro ou tente novamente. \n";
+            }
+            if(!msg){
+                const userSession = {
+                    cpf: jsonRequest['cpf'],
+                    nome: jsonRequest['nome'],
+                    endereco: jsonRequest['endereco'],
+                    email: jsonRequest['email'],
+                    telefone: jsonRequest['telefone']
+                };
 
-                    sessionStorage.setItem("usuario", JSON.stringify(userSession));
-                    navigate("/HomeCliente");
-                }else{
-                    alert(msg);
-                    msg = "";
-                }
-            }).catch((error) => {
-                console.error(error);
-            });
-        }
+                sessionStorage.setItem("usuario", JSON.stringify(userSession));
+                navigate("/HomeCliente");
+            }else{
+                alert(msg);
+                msg = "";
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
     };
     
 
