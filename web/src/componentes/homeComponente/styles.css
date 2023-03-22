@@ -19,6 +19,8 @@ header {
     gap: 20px;
     /* border:solid green 2px; */
     background: #0A5F55;
+    background-image: url("../fruits.png");
+    background-size: 110%;
 }
 
 .logo {
