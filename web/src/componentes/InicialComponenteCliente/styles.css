@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+
+* {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: #ffffff;
+}
+
+.cabeca{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    height: 50%;
+        
+}
+.botoes1{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-right: 12%;
+    max-width: 100%;
+    gap:10px;
+    width: 100%;
+    height: 30%;
+}
+.logoHeader {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+.logoHeader > img{
+    width: 10%;
+    margin-left: 9%;
+}
+.bt1{
+    width: 7rem;
+    height: 2.3rem;
+    font-size: 1.2rem;
+    padding: 0 0.4rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    color: #465e00;
+    transition: 0.3s;
+}
+.bt1:hover{
+    color:#7ea800;
+}
+section{
+    margin-top: 3%;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap:20px;
+    flex-wrap: wrap-reverse;
+    padding: 5px;
+    margin-top: 5%;
+}
+.div1{
+    max-width: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.textos{
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: flex-start;
+    color:#0A5F55;
+    font-size: 1.4rem;
+    
+}
+.p1{
+    margin-top: -0.7rem;
+}
+.botoes2{
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.bt2{
+    width: 9.5rem;
+    height: 2.7rem;
+    font-size: 1.2rem;
+    padding: 0 0.4rem;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #C4DC79;
+    color: #ffffff;
+    font-weight: 800;
+    transition: 0.3s;
+}
+.bt2:hover{
+    background: #B1D34B;
+    font-weight: 800;
+}
+.bt3{
+    width: 11rem;
+    height: 2.3rem;
+    font-size: 1.2rem;
+    padding: 0 0.4rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    color: #C4DC79;
+    font-weight: 800;
+    transition: 0.3s;
+    border-bottom: 2px #C4DC79 solid;
+    border-radius: 5px;
+}
+.bt3:hover{
+    border-bottom: 2px #B1D34B solid;
+    color: #B1D34B;
+}
+.div2{
+    max-width: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.image{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+img{
+    max-width: max-content;
+    width: 100%;
+}
+
+@media (max-width: 670px) {
+    .bt1{
+        width: 7rem;
+        height: 1.9rem;
+        font-size: 1.3rem;
+        padding: 0 0.4rem;
+    }
+    .cabeca{
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .botoes1{
+        gap:10px;
+    }
+    section{
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .div1{
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: flex-start;
+
+    }
+    .textos{
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center ;
+        font-size:1rem;
+    }
+    .botoes2{
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align: flex-start;
+    }
+    .div2{
+        max-width: max-content;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 510px) {
+
+    .cabeca{
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        
+    }
+    .botoes1{
+        gap:10px;
+    }
+    .bt1{
+        width: 6rem;
+        height: 1.6rem;
+        font-size: 1rem;
+        padding: 0 0.4rem;
+        border-radius: 15px;
+        outline: none;
+        cursor: pointer;
+        background: transparent;
+        transition: 1s;
+    }
+    .textos{
+        font-size: 0.7rem;
+    }
+    .bt2{
+        width: 8rem;
+        height: 1.6rem;
+    }
+    .bt3{
+        width: 10rem;
+        height: 1.6rem;
+    }
+}
+
+
+@media (max-width: 310px) {
+    .cabeca{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .bt1{
+        width: 4rem;
+        font-size: 0.8rem;
+    }
+    .bt2{
+        width: 6rem;
+        font-size: 0.8rem;
+    }
+    .bt3{
+        width: 8rem;
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .div2{
+        width: 100%;
+    }
+    img{
+        width: 100%;
+
+    }
+}

@@ -1,8 +1,9 @@
 import "./styles.css";
+import image from "./ft.svg"
 import logo from "../logo-header.png"
 import { useNavigate } from "react-router-dom";
 
-function InicialComponente() {
+function InicialComponenteCliente() {
     const navigate = useNavigate();
     return (
         <body>
@@ -14,7 +15,7 @@ function InicialComponente() {
             <section>
                 <div className="div1">
                     <div className="textos">
-                            <h1>Frutos do Pará é uma plataforma de compra e vendas de alimentos online.</h1>
+                            <h1>Ir para a feira sem sair de casa?</h1>
                             <h1 className="p1">Cadastre-se e compre frutas, legumes</h1>
                             <h1 className="p1">e muito mais no seu conforto!</h1>
                     </div>
@@ -23,9 +24,14 @@ function InicialComponente() {
                         <a onClick={ e => navigate("/loginPage")}><button className="bt3" >Ja tenho cadastro </button></a>
                     </div>
                 </div>
+                <div className="div2">
+                    <div className="image">
+                        <img src={image} alt="" />
+                    </div>
+                </div>
             </section>
         </body>
     )
 };
 
-export default InicialComponente;
+export default InicialComponenteCliente;
