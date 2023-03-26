@@ -19,7 +19,7 @@ function InicialComponenteVendedor() {
                         <p>Cadastra-se e vamos iniciar sua jornada</p>
                     </div>
                     <div className="botoes2">
-                        <a onClick={e => navigate("/cadastroPage")}><button className="bt2">Cadastrar</button></a>
+                        <a onClick={e => navigate("/lojaCadastroPage")}><button className="bt2">Cadastrar</button></a>
                         <a onClick={e => navigate("/loginPage")}><button className="bt3" >Ja tenho cadastro </button></a>
                     </div>
                 </div>

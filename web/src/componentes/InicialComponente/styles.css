@@ -81,8 +81,8 @@ section{
 }
 
 .textosInicial h1 {
-    font-weight: bold;
-    font-size: 2.5rem;
+    font-weight: bolder;
+    font-size: 2.8rem;
     margin-bottom: 0.5vh;
 }
 
@@ -141,14 +141,7 @@ p {
     border-bottom: 2px #B1D34B solid;
     color: #B1D34B;
 }
-.div2{
-    max-width: 30%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
+
 .image{
     width: 100%;
     display: flex;

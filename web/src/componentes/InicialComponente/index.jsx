@@ -18,8 +18,8 @@ function InicialComponente() {
                             <p>Você está no lugar certo! O Frutos do Pará é uma plataforma de compra e vendas de alimentos online</p>
                     </div>
                     <div className="botoes2Inicial">
-                        <a onClick={ e => navigate("/inicioPageCliente")}><button className="bt2Inicial">Cliente</button></a>
-                        <a onClick={ e => navigate("/InicioPageVendedor")}><button className="bt3Inicial" >Vendedor</button></a>
+                        <a onClick={ e => navigate("/inicioPageCliente")}><button className="bt2Inicial">Comprar</button></a>
+                        <a onClick={ e => navigate("/InicioPageVendedor")}><button className="bt3Inicial" >Vender</button></a>
                     </div>
                 </div>
             </section>
