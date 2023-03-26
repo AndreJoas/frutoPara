@@ -140,7 +140,10 @@ module.exports = {
             json.result.push({
                 codigo             : store[i].codigo,
                 nome               : store[i].nome,
-                cnpj               : store[i].cnpj
+                cnpj               : store[i].cnpj,
+                email               : store[i].email,
+                senha               : store[i].senha,
+                telefone               : store[i].telefone,
             });
         }
 
@@ -152,8 +155,8 @@ module.exports = {
             result:{}
         };
 
-        let codigo = req.params.codigo;
-        let store = await productService.getOneStore(codigo);
+        let cnpj = req.params.cnpj;
+        let store = await productService.getOneStore(cnpj);
 
         if(store){
             json.result = store;
@@ -169,13 +172,19 @@ module.exports = {
 
         let nome  = req.body.nome;
         let cnpj  = req.body.cnpj;
+        let senha  = req.body.senha;
+        let telefone  = req.body.telefone;
+        let email  = req.body.email;
 
-        if(nome && cnpj){
-            let storeID = await productService.insertStore(nome, cnpj);
+        if(nome && cnpj && senha && telefone && email){
+            let storeID = await productService.insertStore(nome, cnpj, senha, telefone, email);
             json.result = {
                 codigo: storeID,
                 nome,
-                cnpj
+                cnpj,
+                senha,
+                telefone,
+                email
             };
         }else{
             json.error = 'Está faltando campos no cadastro!'
@@ -191,14 +200,14 @@ module.exports = {
 
         let codigo           = req.params.codigo;
         let nome             = req.body.nome;
-        let cnpj             = req.body.cnpj;
+        let telefone             = req.body.telefone;
 
-        if(codigo && nome && cnpj){
-            await productService.updateStore(codigo, nome, cnpj);
+        if(codigo && nome && telefone){
+            await productService.updateStore(codigo, nome, telefone);
             json.result = {
                 codigo,
                 nome,
-                cnpj
+                telefone
             };
         }else{
             json.error = 'Está faltando campos no cadastro!'

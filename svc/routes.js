@@ -13,7 +13,7 @@ router.delete('/products/delete/:codigo', productController.deleteProduct); //de
 
 //STORE
 router.get('/store/findAll', productController.findAllStores);
-router.get('/store/getOne/:codigo', productController.getOneStore);
+router.get('/store/getOne/:cnpj', productController.getOneStore);
 router.post('/store/insert', productController.insertStore);
 router.put('/store/update/:codigo', productController.updateStore);
 router.delete('/store/delete/:codigo', productController.deleteStore);
