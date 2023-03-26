@@ -15,13 +15,12 @@ function InicialComponenteCliente() {
             <section>
                 <div className="div1">
                     <div className="textos">
-                            <h1>Ir para a feira sem sair de casa?</h1>
-                            <h1 className="p1">Cadastre-se e compre frutas, legumes</h1>
-                            <h1 className="p1">e muito mais no seu conforto!</h1>
+                        <h1>Ir para a feira sem sair de casa?</h1>
+                        <p className="p1">Cadastre-se e compre frutas, legumes e muito <br/> mais no seu conforto</p>
                     </div>
                     <div className="botoes2">
-                        <a onClick={ e => navigate("/cadastroPage")}><button className="bt2">Cadastrar</button></a>
-                        <a onClick={ e => navigate("/loginPage")}><button className="bt3" >Ja tenho cadastro </button></a>
+                        <a onClick={e => navigate("/cadastroPage")}><button className="bt2">Cadastrar</button></a>
+                        <a onClick={e => navigate("/loginPage")}><button className="bt3" >Ja tenho cadastro </button></a>
                     </div>
                 </div>
                 <div className="div2">
