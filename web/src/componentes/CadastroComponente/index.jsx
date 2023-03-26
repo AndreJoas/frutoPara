@@ -72,7 +72,9 @@ function CadastroComponente() {
                 if (jsonRequest['email'] == email) {
                     msg += "Este e-mail já possui um cadastro, favor inserir outro e-mail.\n"
                 }
-            }else if(email){
+            }
+            
+            if(email){
                 if (email.indexOf("@") == -1) {
                     msg += "É obrigatório que o e-mail tenha um dominio. \n";
                 }
@@ -89,6 +91,7 @@ function CadastroComponente() {
                 navigate("/loginPage");
             } else {
                 alert(msg);
+                msg = "";
             }
         })
         .catch((error) => {

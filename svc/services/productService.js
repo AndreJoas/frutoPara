@@ -110,9 +110,9 @@ module.exports = {
             });
         });
     },
-    getOneStore: (codigo) => {
+    getOneStore: (cnpj) => {
         return new Promise((resolve, reject) => {
-           db.query("SELECT * FROM store WHERE codigo = ?", [codigo], (err, res) =>{
+           db.query("SELECT * FROM store WHERE cnpj = ?", [cnpj], (err, res) =>{
                 if(err){
                     reject(err);
                     return;
@@ -125,10 +125,10 @@ module.exports = {
            });
         });
     },
-    insertStore: (nome, cnpj) => {
+    insertStore: (nome, cnpj, senha, telefone, email) => {
         return new Promise((resolve, reject) => {
-            db.query("INSERT INTO store (nome, cnpj) VALUES (?, ?)", 
-                [nome, cnpj], 
+            db.query("INSERT INTO store (nome, cnpj, senha, telefone, email) VALUES (?, ?, ?, ?, ?)", 
+                [nome, cnpj, senha, telefone, email], 
                 (err, res) =>{
 
                 if(err){
@@ -139,10 +139,10 @@ module.exports = {
             });
         });
     },
-    updateStore: (codigo, nome, cnpj) => {
+    updateStore: (codigo, nome, telefone) => {
         return new Promise((resolve, reject) => {
-            db.query("UPDATE store SET nome = ?, cnpj = ? WHERE codigo = ?", 
-                [nome, cnpj, codigo], 
+            db.query("UPDATE store SET nome = ?, telefone = ? WHERE codigo = ?", 
+                [nome, telefone, codigo], 
                 (err, res) =>{
 
                 if(err){

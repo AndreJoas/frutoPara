@@ -40,7 +40,7 @@ export default function HomeCliente() {
                     <div className="headerCenter">
                         <a onClick={ e => navigate("")}><h3>Lojas</h3></a>
                         <a onClick={ e => navigate("")}><h3>Categoria</h3></a>
-                        <a onClick={ e => navigate("/lojacadastroPage")}><h3>Cadastrar Loja</h3></a>
+                        <a onClick={ e => navigate("/lojaCadastroPage")}><h3>Cadastrar Loja</h3></a>
                     </div>
                 </header>
                 <section className="sessao">
