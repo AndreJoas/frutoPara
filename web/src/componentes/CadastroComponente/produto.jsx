@@ -5,7 +5,6 @@ import { IMaskInput } from "react-imask";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { addProduto } from "../../scripts/products.js";
-import { Base64 } from 'js-base64';
 
 function CadastroProduto() {
 
@@ -38,7 +37,7 @@ function CadastroProduto() {
             const reader = new FileReader(); //API para converter o arquivo enviado em base64   
             reader.readAsDataURL(selectedFile);
             reader.onloadend = () => {
-                setFile(Base64.encode(reader.result));
+                setFile(reader.result);
             };
         } else {
             setFile(null);
@@ -105,7 +104,7 @@ function CadastroProduto() {
                                 <p>Agora os seus clientes poderão saborear um pouco do gostinho do Pará.</p>
                         </div>
                         <div className="botoes2Inicial">
-                            <a onClick={ e => navigate("/")}><button className="bt2Loja">Visualizar Loja</button></a>
+                            <a onClick={ e => navigate("/produtosLoja")}><button className="bt2Loja">Visualizar Loja</button></a>
                             <a onClick={ e => navigate("/HomeLoja")}><button className="bt3Inicial" >Voltar</button></a>
                         </div>
                     </div>
@@ -136,10 +135,10 @@ function CadastroProduto() {
                             <label className="labelCampoCliente">Categoria</label>
                             <select className="ip" value={categoria} onChange={(event) => newValueCategoria(event.target.value)}>
                                 <option value="">Selecione uma opção</option>
-                                <option value="fruta">Fruta</option>
-                                <option value="verdura">Verdura</option>
-                                <option value="legume">Legume</option>
-                                <option value="frios">Frios</option>
+                                <option value="Frutas">Fruta</option>
+                                <option value="Verduras">Verdura</option>
+                                <option value="Legumes">Legume</option>
+                                <option value="Frios">Frios</option>
                             </select>
                             <label className="labelCampoCliente">Valor em R$ (unidade)</label>
                             <IMaskInput

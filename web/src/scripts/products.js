@@ -10,3 +10,14 @@ export const addProduto = (data) => {
         body: JSON.stringify(data)
     });
 }
+
+export const buscaProdutoPorLoja = async (cnpj) => {
+    try {
+        const response = await fetch(`${urlApi}/api/products/findAll/${cnpj}`, {
+            method: "GET"
+        });     
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+    }
+}

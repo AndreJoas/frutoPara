@@ -5,7 +5,7 @@ const productController = require('./controllers/productController');
 
 //PRODUCTS
 router.get('/products/findAll', productController.findAllProducts); //busca todos os produtos
-router.get('/products/getOne/:codigo', productController.getOneProduct); //busca somente um produto pelo código
+router.get('/products/findAll/:cnpj', productController.findAllProductsEspecify); //busca somente um produto pelo código
 router.get('/products/getCategory/:categoria', productController.getCategory); //busca todos os produtos de uma determinada categoria
 router.post('/products/insert', productController.insertProduct); //insere produtos
 router.put('/products/update/:codigo', productController.updateProduct); //atualiza um produto pelo código

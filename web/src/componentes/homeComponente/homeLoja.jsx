@@ -39,7 +39,7 @@ export default function HomeLoja() {
                         </div>
                         <div className="botoes2Inicial">
                             <a onClick={ e => navigate("/cadastroProduto")}><button className="bt2Loja">Cadastrar Produto</button></a>
-                            <a onClick={ e => navigate("/InicioPageVendedor")}><button className="bt3Inicial" >Ver Loja</button></a>
+                            <a onClick={ e => navigate("/produtosLoja")}><button className="bt3Inicial" >Ver Loja</button></a>
                         </div>
                     </div>
                 </section>

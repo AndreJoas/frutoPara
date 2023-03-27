@@ -13,15 +13,15 @@ module.exports = {
             });
         });
     },
-    getOneProduct: (codigo) => {
+    findAllProductsEspecify: (cnpj) => {
         return new Promise((resolve, reject) => {
-           db.query("SELECT * FROM products WHERE codigo = ?", [codigo], (err, res) =>{
+           db.query("SELECT * FROM products WHERE cnpj_loja = ?", [cnpj], (err, res) =>{
                 if(err){
                     reject(err);
                     return;
                 }
                 if(res.length > 0){
-                    resolve(res[0]);
+                    resolve(res);
                 }else{
                     resolve(false);
                 }

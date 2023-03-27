@@ -24,14 +24,14 @@ module.exports = {
 
         res.json(json);
     },
-    getOneProduct: async(req, res) => {
+    findAllProductsEspecify: async(req, res) => {
         let json = {
             error:"", 
             result:{}
         };
 
-        let codigo = req.params.codigo;
-        let product = await productService.getOneProduct(codigo);
+        let cnpj = req.params.cnpj;
+        let product = await productService.findAllProductsEspecify(cnpj);
 
         if(product){
             json.result = product;
