@@ -1,240 +1,256 @@
-.nomeloja{
-    max-width: 100%;
-    width: 95%;
-    border: solid 1px #0A5F55;
-    height: 6rem;
+.headerLogin {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    padding: 0 10px;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 10px;
-    background-color: #fff;
+    height: 50%;
 }
-.elipse2{
-    background-color: gray;
-    width: 75px;
-    height: 70px;
-    border-radius: 50%;
+
+.logoHeaderLogin{
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
-.perfilLoja{
-    max-width: 14%;
-    width: 50%;
-    display:flex;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 1.2rem;
-    color: #0A5F55;
-    /* color: #fff; */
-}
-.divdados{
-    margin-left: 62%;
-    max-width: 30%;
+
+.logoHeaderLogin > img{
     width: 10%;
-    padding: 10px;
-    border-right: solid 3px gray;
 }
-.dados{
-    display:flex;
-    gap:10px;
+.ip{
+    border: none;
+    border-bottom: 2px #C4DC79 solid;
+    max-width: 100%;
+    width: 64%;
+    height: 2rem;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.textosLoja h1 {
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 0.5vh;
+}
+
+.textosLoja{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color:#B1D34B;
-}
-.sobre{
-    
+    text-align: center;
     color:#0A5F55;
 }
 
-
-.selects{
-    /* border: solid 1px #0A5F55; */
-    display:flex;
-    max-width: 100%;
-    width: 100%;
-    flex-wrap: wrap-reverse ;
-    gap: 10px;
-    justify-content: space-around;
-    align-items: center;
-}
-.divisor{
-    display:flex;
-    max-width: 80%;
+#btt2 {
+    max-width: 30%;
     width: 50%;
-    gap:10px;
-    justify-content: center;
-    align-items: center;   
-    flex-wrap: wrap;
-    border-bottom: 3px  solid #730e0e;
+    height: 2rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: #0A5F55;
+    transition: 0.8s;
 }
-.selec1{
-    max-width: 90%;
-    width: 29%;
-    display: flex;
-    padding: 5px;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+
+#btt {
+    max-width: 30%;
+    width: 50%;
+    height: 2rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: 0.8s;
-    gap: 10px;
-    
 }
-.selec1:hover{
-    background-color: #0A5F55;
-    color: #fff;
-    border-radius: 10px;
+
+#btt:hover {
+    background: #16d516;
+    color: #f7f7f7;
+    font-weight: 800;
 }
-select{
-    /* border: none; */
-    width: 40%;
+
+#btt2:hover {
+    background: #0A5F55;
+    color: #000000;
+    font-weight: 800;
+}
+
+.login {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forme {
+    max-width: 40%;
+    width: 100%;
+    height: 20rem;
+    border: solid 1px #fff;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 5px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.bem{
+    color: #0A5F55;
+    font-size: 2rem;
+}
+
+.perfil {
+    max-width: 100%;
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+#bt {
+    max-width: 30%;
+    width: 50%;
+    height: 2rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: #0A5F55;
+    transition: 0.8s;
+}
+
+#bt2 {
+    max-width: 30%;
+    width: 50%;
+    height: 2rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+#bt:hover {
+    background: #16d516;
+    color: #f7f7f7;
+    font-weight: 800;
+}
+
+#bt2:hover {
+    background: #0A5F55;
+    color: #000000;
+    font-weight: 800;
+}
+
+.campos {
+    max-width: 100%;
+    width: 100%;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.voltar {
+    max-width: 100%;
+    width: 100%;
+    height: 2.5rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: none;
+    transition: 0.8s;
+    color: #C4DC79;
+    font-weight: 400;
+    text-decoration-line: underline; 
+}
+
+.voltar:hover {
+    color: #B1D34B;
+}
+
+.bt2Loja{
+    width: 9.5rem;
+    height: 2.7rem;
+    font-size: 1rem;
+    padding: 0 0.4rem;
+    border-radius: 15px;
     border: none;
     outline: none;
-
-}
-.icons3{
-    flex-wrap: wrap;
-    max-width: 40%;
-    width: 80%;
-    display: flex;
-    gap:70px;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
+    background: #C4DC79;
+    color: #ffffff;
+    font-weight: 800;
+    transition: 0.3s;
 }
-.imgcard2{
-    color:#fff;
+.bt2Loja:hover{
+    background: #B1D34B;
+    font-weight: 800;
 }
 
-
-@media (max-width:1150px){
-        .perfilLoja{
-            max-width: 30%;
-            width:20%;
-        }
-        
-        .divdados{
-            margin-left: 50%;
-            max-width: 10%;
-            width: 100%;
-        }
-       
-      
+@media (max-width:823px) {
+    .forme {
+        max-width: 70%;
+        width: 80%;
+    }
+    .voltar{
+        margin-left: 15.5%;
+    } 
 }
-@media (max-width:991px) {
+
+@media (max-width:543px) {
+    .forme {
+        max-width: 80%;
+        width: 80%;
+    }
+    .voltar{
+        margin-left: 10.5%;
+    }
     
-    .lista2{
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .perfil {
         max-width: 100%;
         width: 100%;
-    }
-
-}
-@media (max-width:891px) {
-    .nomeloja{
-        max-width: 100%;
-        justify-content: space-between;
         gap:20px;
     }
-    .perfilLoja{
-        gap:10px;
-        max-width: 80%;
-        width:100%;
-
-        
-    }
-    .icons3{
-        max-width: 100%;
-        width: 100%;
-    }
-    .elipse2{
-        margin-left: -20%;
-    }
-    .divdados{
-        margin-left: 30%;
-        max-width: 30%;
-        width: 40%;
-    }
-    .sobre{
+    #bt{
         max-width: 40%;
-        width: 60%;
     }
-  
-    .divisor{
-        max-width: 90%;
-        width: 100%;
+    #bt2{
+        max-width: 40%;
     }
-    .nomeloja{
-        max-width: 90%;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        
-    }
-    .perfilLoja{
-        margin-left: 10%;
+    .ip{
+        width: 85%;
     }
 }
-@media (max-width:650px) {
-    .divisor{
+@media (max-width:363px)
+{
+    .forme {
         max-width: 100%;
         width: 100%;
-        gap:2px;
-        justify-content: space-between;
+        text-align: center;
+        height: 30%;
     }
-    .selec1{
-        width: 33%;
+    #bt{
+        max-width: 45%;
     }
-    .nomeloja{
-        max-width: 100%;
-        width: 100%;
-    }
-    .n{
-        font-size: 1rem;
-    }
-    .nomeloja{
-        gap:2px;
-    }
-    .divdados{
-        margin-left: 24%;
-    }
-}
-@media (max-width:460px) {
-    .nomeloja{
-        margin-top: -4.5rem;
-        height: 10.5rem;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-
-    }
-    .perfilLoja{
-        margin-top: 0.3rem;
-    }
-    .divdados{
-        margin-left: 2%;
-    }
-    .icons3{
-        max-width: 100%;
-        width: 100%;
-        gap:1px;
-        justify-content: space-between;
-    }
-    .divisor{
-        max-width: 100%;
-        align-items: center;
-        justify-content: space-around;
-        width: 100%;
-        gap:7px;
-        flex-wrap: wrap;
-    }
-    .selec1{
-        max-width: 70%;
-        width: 100%;
+    #bt2{
+        max-width: 45%;
     }
 }

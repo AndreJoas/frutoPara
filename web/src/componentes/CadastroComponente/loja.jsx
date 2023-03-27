@@ -1,6 +1,5 @@
 
 import "./styles.css";
-import { TbArrowBarLeft } from "react-icons/tb";
 import logo from "../logo-header.png";
 import { IMaskInput } from "react-imask";
 import { useState } from "react";
@@ -21,18 +20,16 @@ function Loja() {
     let msg = "";
     
     let camposCadastro = {
-        "Parent_codigo": 1,
         "Nome": nome,
-        "CNPJ": numCNPJ.replace(/[^a-zA-Z0-9 ]/g, ''),
+        "CNPJ": numCNPJ,
         "Email": email,
         "Senha": senha,
         "Telefone": numTelefone
     }
 
     let envioDadosBD = {
-        "parent_codigo": 1,
         "nome": nome,
-        "cnpj": numCNPJ.replace(/[^a-zA-Z0-9 ]/g, ''),
+        "cnpj": numCNPJ,
         "email": email,
         "senha": Base64.encode(senha),
         "telefone": numTelefone
@@ -43,7 +40,8 @@ function Loja() {
     }
 
     const validateCadastro = () => {
-        buscaLoja(numCNPJ.replace(/[^a-zA-Z0-9 ]/g, '')).then((data) => {
+        buscaLoja(numCNPJ).then((data) => {
+            console.log(data)
             const jsonRequest = data['result'];
             
             for (let i in Object.keys(camposCadastro)) {
@@ -54,7 +52,7 @@ function Loja() {
                     msg += `Campo '${keyCampo}' é obrigatório.\n`;
                     
                 } else if (keyCampo == 'CNPJ') {
-                    if (valueCampo.replace(/[^a-zA-Z0-9 ]/g, '').length < 14) {
+                    if (valueCampo.length < 14) {
                         msg += "Campo 'CNPJ' deve ter 14 digitos.\n"
                     }
                     
@@ -77,7 +75,7 @@ function Loja() {
             }
             
             if(jsonRequest['cnpj']){
-                if(jsonRequest['cnpj'] == numCNPJ.replace(/[^a-zA-Z0-9 ]/g, '')){
+                if(jsonRequest['cnpj'] == numCNPJ){
                     msg += "Já possui um cadastro com este CNPJ. \n";
                 }
             }
@@ -90,7 +88,7 @@ function Loja() {
 
             if (!msg) {
                 addLoja(envioDadosBD);
-                //navigate("/loginPage");
+                navigate("/lojaLoginPage");
             } else {
                 alert(msg);
                 msg = "";
@@ -111,7 +109,7 @@ function Loja() {
             </header>
             <section className="loginCliente">
                 <div className="forme">
-                    <h1 className="bem">Olá, vendedor! Bem-vindo ao cadastro</h1>
+                    <h1 className="bem">Olá, Vendedor! Bem-vindo ao cadastro</h1>
                     <div className="campos">
                         <label className="labelCampoCliente">Nome da Loja</label>
                         <IMaskInput
@@ -129,7 +127,7 @@ function Loja() {
                             placeholder="Ex: XX.XXX.XXX/XXXX-XX"
                             mask="00.000.000/0000-00"
                             value={numCNPJ}
-                            onChange={e => newValueCNPJ(e.target.value)}
+                            onChange={e => newValueCNPJ(e.target.value.replace(/[^a-zA-Z0-9 ]/g, ''))}
                             onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
                         />
                         <label className="labelCampoCliente">Email</label>

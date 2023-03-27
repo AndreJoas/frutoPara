@@ -60,7 +60,7 @@ function LoginComponente() {
             </header>
             <section className="login">
                 <div className="forme">
-                    <h1 className="bem">Bem vindo ao Login</h1>
+                    <h1 className="bem">Login de cliente</h1>
                     <div className="campos">
                         <input
                             className="ip"

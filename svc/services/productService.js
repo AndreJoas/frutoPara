@@ -43,10 +43,10 @@ module.exports = {
            });
         });
     },
-    insertProduct: (nome, categoria, quant_disponivel, preco_unidade) => {
+    insertProduct: (nome, categoria, quant_disponivel, preco_unidade, imagem_produto, nome_loja, cnpj_loja) => {
         return new Promise((resolve, reject) => {
-            db.query("INSERT INTO products (nome, categoria, quant_disponivel, preco_unidade) VALUES (?, ?, ?, ?)", 
-                [nome, categoria, quant_disponivel, preco_unidade], 
+            db.query("INSERT INTO products (nome, categoria, quant_disponivel, preco_unidade, imagem_produto, nome_loja, cnpj_loja) VALUES (?, ?, ?, ?, ?, ?, ?)", 
+                [nome, categoria, quant_disponivel, preco_unidade, imagem_produto, nome_loja, cnpj_loja], 
                 (err, res) =>{
 
                 if(err){
@@ -57,10 +57,10 @@ module.exports = {
             });
         });
     },
-    updateProduct: (codigo, nome, categoria, quant_disponivel, preco_unidade) => {
+    updateProduct: (codigo, nome, categoria, quant_disponivel, preco_unidade, imagem_produto, nome_loja, cnpj_loja) => {
         return new Promise((resolve, reject) => {
-            db.query("UPDATE products SET nome = ?, categoria = ?, quant_disponivel = ?, preco_unidade = ? WHERE codigo = ?", 
-                [nome, categoria, quant_disponivel, preco_unidade, codigo], 
+            db.query("UPDATE products SET nome = ?, categoria = ?, quant_disponivel = ?, preco_unidade = ?, imagem_produto = ?, nome_loja = ?, cnpj_loja = ? WHERE codigo = ?", 
+                [codigo, nome, categoria, quant_disponivel, preco_unidade, imagem_produto, nome_loja, cnpj_loja], 
                 (err, res) =>{
 
                 if(err){

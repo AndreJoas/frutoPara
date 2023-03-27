@@ -16,6 +16,9 @@ module.exports = {
                 categoria          : products[i].categoria,
                 quant_disponivel   : products[i].quant_disponivel,
                 preco_unidade      : products[i].preco_unidade,
+                imagem_produto     : products[i].imagem_produto,
+                nome_loja          : products[i].nome_loja,
+                cnpj_loja          : products[i].cnpj_loja,
             });
         }
 
@@ -51,6 +54,9 @@ module.exports = {
                 categoria          : products[i].categoria,
                 quant_disponivel   : products[i].quant_disponivel,
                 preco_unidade      : products[i].preco_unidade,
+                imagem_produto     : products[i].imagem_produto,
+                nome_loja          : products[i].nome_loja,
+                cnpj_loja          : products[i].cnpj_loja
             });
         }
 
@@ -66,15 +72,21 @@ module.exports = {
         let categoria        = req.body.categoria;
         let quant_disponivel = req.body.quant_disponivel;
         let preco_unidade    = req.body.preco_unidade;
+        let imagem_produto   = req.body.imagem_produto;
+        let nome_loja        = req.body.nome_loja;
+        let cnpj_loja        = req.body.cnpj_loja;
 
-        if(nome && categoria && quant_disponivel && preco_unidade){
-            let productID = await productService.insertProduct(nome, categoria, quant_disponivel, preco_unidade);
+        if(nome && categoria && quant_disponivel && preco_unidade && imagem_produto && nome_loja && cnpj_loja){
+            let productID = await productService.insertProduct(nome, categoria, quant_disponivel, preco_unidade, imagem_produto, nome_loja, cnpj_loja);
             json.result = {
                 codigo: productID,
                 nome,
                 categoria,
                 quant_disponivel,
-                preco_unidade
+                preco_unidade,
+                nome_loja,
+                cnpj_loja,
+                imagem_produto
             };
         }else{
             json.error = 'Está faltando campos no cadastro!'
@@ -93,15 +105,21 @@ module.exports = {
         let categoria        = req.body.categoria;
         let quant_disponivel = req.body.quant_disponivel;
         let preco_unidade    = req.body.preco_unidade;
+        let imagem_produto   = req.body.imagem_produto;
+        let nome_loja        = req.body.nome_loja;
+        let cnpj_loja        = req.body.cnpj_loja;
 
-        if(codigo && nome && categoria && quant_disponivel && preco_unidade){
-            await productService.updateProduct(codigo, nome, categoria, quant_disponivel, preco_unidade);
+        if(codigo && nome && categoria && quant_disponivel && preco_unidade && imagem_produto && nome_loja && cnpj_loja){
+            await productService.updateProduct(codigo, nome, categoria, quant_disponivel, preco_unidade, imagem_produto, nome_loja, cnpj_loja);
             json.result = {
                 codigo,
                 nome,
                 categoria,
                 quant_disponivel,
-                preco_unidade
+                preco_unidade,
+                nome_loja,
+                cnpj_loja,
+                imagem_produto
             };
         }else{
             json.error = 'Está faltando campos no cadastro!'
