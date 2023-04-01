@@ -68,6 +68,12 @@ function LoginComponente() {
                             placeholder="Email"
                             value={email}
                             onChange={e => newValueEmail(e.target.value)}
+                            onKeyDown={e => {
+                                if (e.key === "Enter") {
+                                    e.preventDefault();
+                                    validateLogin();
+                                }
+                            }}
                         />
                         <input
                             className="ip"
@@ -75,6 +81,12 @@ function LoginComponente() {
                             placeholder="Senha"
                             value={senha}
                             onChange={e => newValueSenha(e.target.value)}
+                            onKeyDown={e => {
+                                if (e.key === "Enter") {
+                                    e.preventDefault();
+                                    validateLogin();
+                                }
+                            }}
                         />
                         <label className="labelCampoCliente">
                             <IMaskInput

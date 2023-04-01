@@ -1,0 +1,93 @@
+*{
+    box-sizing: border-box;
+}
+.allProductsItem{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+.produtoEspecificoItem{
+    margin-top: 2%;
+    width: 90%;
+    display: flex;
+    text-decoration: none;
+    color: #0A5F55;
+    border-radius: 10px;
+    border: 2px #C4DC79 solid;
+    
+}
+.imagemProduto{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
+}
+.produtoEspecificoItem img{
+    display: flex;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    justify-content: center;
+    border-radius: 10px
+}
+.quantidadeInput{
+    -webkit-appearance: none; /* Remove o estilo padrão do Safari */
+    -moz-appearance: textfield; /* Restaura o estilo padrão do Firefox */
+    appearance: none; /* Remove o estilo padrão de outros navegadores */
+    background-color: transparent; /* Define o fundo transparente */
+    width: 50px; /* Define a largura do input */
+    border: none; /* Remove a borda */
+    outline: none; /* Remove o contorno */
+}
+.quantidadeInput::-webkit-inner-spin-button{
+    opacity: 1;
+    background-color: #0A5F55;
+}
+.dadosProduto{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 6%;
+}
+.dadosProduto h2{
+    margin-bottom: 0.5vh;
+}
+.dadosProduto p{
+    margin-bottom: 0.5vh;
+}
+.TituloLojaProdutosItem{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    font-weight: bolder;
+    font-size: 30px;
+    color: #0A5F55;
+    border-bottom: 2px #C4DC79 solid;
+    margin-bottom: 1%;
+    padding-left: 2.5rem;
+}
+.comprar {
+    width: 100%;
+    height: 2.5rem;
+    border: none;
+    border-radius: 6px;
+    padding: 0 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background: #C4DC79;
+    transition: 0.8s;
+    color: #ffffff;
+    margin-top: 1.5rem;
+    font-weight: 400;
+}
+.comprar:hover {
+    background: #B1D34B;
+}

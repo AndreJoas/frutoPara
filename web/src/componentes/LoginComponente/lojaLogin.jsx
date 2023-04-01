@@ -69,6 +69,12 @@ function LoginLoja() {
                             mask="00.000.000/0000-00"
                             value={CNPJ}
                             onChange={e => newValueCNPJ(e.target.value.replace(/[^a-zA-Z0-9 ]/g, ''))}
+                            onKeyDown={e => {
+                                if (e.key === "Enter") {
+                                    e.preventDefault();
+                                    validateLogin();
+                                }
+                            }}
                         />
                         <input
                             className="ip"
@@ -76,6 +82,12 @@ function LoginLoja() {
                             placeholder="Senha"
                             value={senha}
                             onChange={e => newValueSenha(e.target.value)}
+                            onKeyDown={e => {
+                                if (e.key === "Enter") {
+                                    e.preventDefault();
+                                    validateLogin();
+                                }
+                            }}
                         />
                         <label className="labelCampoCliente">
                             <IMaskInput
@@ -85,7 +97,20 @@ function LoginLoja() {
                             {showPass ? "Esconder senha" : "Mostrar senha"}
                         </label>
                     </div>
-                    <a><button className="entrar" onClick={validateLogin}>Entrar</button></a>
+                    <a>
+                        <button
+                            className="entrar"
+                            onClick={validateLogin}
+                            onKeyDown={e => {
+                                if (e.key === "Enter") {
+                                    e.preventDefault();
+                                    validateLogin();
+                                }
+                            }}
+                        >
+                            Entrar
+                        </button>
+                    </a>
                     <a><button onClick={e => navigate("/cadastroPage")} className="voltar">Voltar</button></a>
                 </div>
             </section>

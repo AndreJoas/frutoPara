@@ -28,7 +28,23 @@ header {
     width: 70%;
     padding: 5px;
 }
-
+.categorias{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 30px;
+}
+.categorias a{
+    color: #0A5F55;
+    border-bottom: 2px #C4DC79 solid;
+    border-radius: 6px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.8s;
+}
+.categorias a:hover{
+    border-bottom: 2px #B1D34B solid;
+}
 .cliente {
     max-width: 100%;
     width: 100%;

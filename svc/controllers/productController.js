@@ -39,6 +39,21 @@ module.exports = {
 
         res.json(json)
     },
+    getOneProduct: async(req, res) => {
+        let json = {
+            error:"", 
+            result:{}
+        };
+
+        let codigo = req.params.codigo;
+        let product = await productService.getOneProduct(codigo);
+
+        if(product){
+            json.result = product;
+        }
+
+        res.json(json)
+    },
     getCategory: async(req, res) => {
         let json = {
             error:"", 

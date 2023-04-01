@@ -21,3 +21,25 @@ export const buscaProdutoPorLoja = async (cnpj) => {
         console.error(error);
     }
 }
+
+export const buscaProdutos = async () => {
+    try {
+        const response = await fetch(`${urlApi}/api/products/findAll`, {
+            method: "GET"
+        });
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export const buscaProdutoEspecifico = async (codigo) => {
+    try {
+        const response = await fetch(`${urlApi}/api/products/getOne/${codigo}`, {
+            method: "GET"
+        });
+        return await response.json();
+    } catch (error) {
+        console.error(error);
+    }
+}

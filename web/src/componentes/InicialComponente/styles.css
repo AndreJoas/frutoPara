@@ -86,7 +86,7 @@ section{
     margin-bottom: 0.5vh;
 }
 
-p {
+.textosInicial > p {
     margin-bottom: 4vh;
     width: 30rem;
     text-align: center;

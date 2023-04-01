@@ -1,75 +1,78 @@
-// Responsivo
-
-import Destaques from "../DestaquesComponente";
-import Procurando from "../procurandoComponente";
-import wel from "../homeComponente/w.svg";
-import manga1 from "../homeComponente/E1.png";
-import manga2 from "../homeComponente/E2.png";
-import loja from "../homeComponente/lojas.svg";
+import "./styles.css";
+import logo from "../logo-header.png"
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { buscaProdutos } from "../../scripts/products.js";
+import { Link } from "react-router-dom";
 
-
-import "./styles.css"
-import ListaLoja from "../listaLojaComponente";
-
-export default function HomeCliente() {
+export default function HomeLojaProdutos() {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [userExist, setUserExist] = useState(false);
-    useEffect(() => {
-        const recoveredUser = sessionStorage.getItem("usuario");
+    const [images, setImages] = useState([]);
+    const [categoriaSelecionada, setCategoriaSelecionada] = useState(null);
+    const imagensFiltradas = categoriaSelecionada ? images.filter((produto) => produto.categoria === categoriaSelecionada).sort(() => Math.random() - 0.5) : images.sort(() => Math.random() - 0.5);
 
-        if(recoveredUser){
+    useEffect(() => {
+        const recoveredStore = sessionStorage.getItem("usuario");
+
+        if(recoveredStore){
             setUserExist(true);
-            setUser(JSON.parse(recoveredUser));
-        }      
+            setUser(JSON.parse(recoveredStore));
+        }
         
         setLoading(false);
     }, []);
-    if(loading){
-        return <div className="loading">Carregando...</div>
-    }else if(!userExist){
-        return navigate("/loginPage");
-    }else{
-        return (
-            <body className="cliente">
-                <header>
-                    <div className="logo">logo</div>
-                    <div className="headerCenter">
-                        <a onClick={ e => navigate("")}><h3>Lojas</h3></a>
-                        <a onClick={ e => navigate("")}><h3>Categoria</h3></a>
-                        <a onClick={ e => navigate("/lojaCadastroPage")}><h3>Cadastrar Loja</h3></a>
-                    </div>
-                </header>
-                <section className="sessao">
-                    <div className="divisao1">
-                        <div className="subdivisao">
-                            <div className="frutas">
-                                <div style={{ position: 'relative', marginTop: '-2.3rem' }}><img className="ft" src={manga1} alt="" /></div>
-                                <div style={{ marginTop: '-17.3rem', marginLeft: '3.4rem' }} ><img className="ft2" src={manga2} alt="" /></div>
-                            </div>
-                            <div className="textos2">
-                                <h2>Olá {user['nome']}! Bem-vindo ao Frutos do Pará,</h2>
-                                <h2 className="tx2">Aproveite e boas compras!</h2>
-                            </div>
+
+    useEffect(() => {
+        if(user){
+            buscaProdutos().then((data) => {
+                const jsonResult = data['result'];
+                setImages(jsonResult);
+            }).catch((error) => {
+                console.error(error)
+            });
+        }
+    }, [user]);
+
+    const handleCategoriaClick = (categoria) => {
+        setCategoriaSelecionada(categoria);
+    };
+
+    return (
+        <div>
+            <header className="cabeca">
+                        <div className="logoHeaderCadastro">
+                            <img src={logo} alt="" />
                         </div>
-                        <div className="image"><img className="wel" src={wel} alt="" /></div>
+            </header>
+            <div className="TituloLojaProdutos">
+                <h2>Olá { user ? user['nome'] : null}! Boas compras.</h2>
+            </div>
+            <div className="categorias">
+                <h2 onClick={() => handleCategoriaClick("Frios")}><a>Frios</a></h2>
+                <h2 onClick={() => handleCategoriaClick("Frutas")}><a>Frutas</a></h2>
+                <h2 onClick={() => handleCategoriaClick("Legumes")}><a>Legumes</a></h2>
+                <h2 onClick={() => handleCategoriaClick("Verduras")}><a>Verduras</a></h2>
+                <h2 onClick={() => handleCategoriaClick(false)}><a>Todas as categorias</a></h2>
+            </div>
+            <div className="allProducts">
+                {imagensFiltradas.map((element, index) => (
+                    <div className="mainProdutos">
+                        <Link to={`/Produto/${element.codigo}`}>
+                            <div className="produtoEspecifico">
+                                    <img src={element.imagem_produto}/>
+                                    <h2>{element.nome}</h2>
+                                    <p>Categoria: {element.categoria}</p>
+                                    <p>Quant. Disponível: {element.quant_disponivel}</p>
+                                    <p>Preço (unidade): R${element.preco_unidade}</p>
+                                    <p>Nome da Loja: {element.nome_loja}</p>
+                            </div>
+                        </Link>
                     </div>
-                    <Procurando />
-                    <Destaques />
-                    <div className="lojasparte">
-                        <div className="pesquLojas">
-                            <div><img src={loja} />LOJAS</div>
-                            <div className="divip"><input  className="ip1" type="text" name="" value="" placeholder="Encontra uma loja" /></div>
-                        </div>
-                        <hr />
-                        <ListaLoja/>
-                    </div>
-                </section>
-    
-            </body>
-        );
-    }
+                ))}
+            </div>
+        </div>
+    );
 }

@@ -1,6 +1,6 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import { Login, Cadastro , Inicio, InicioCliente, InicioVendedor, Loja,LojaLogin, HomeCliente, HomeLoja, Produto, ProdutosLoja} from "../pages/index";
+import { BrowserRouter, Router, Routes, Route } from "react-router-dom";
+import { Login, Cadastro , Inicio, InicioCliente, InicioVendedor, Loja,LojaLogin, HomeCliente, HomeLoja, Produto, ProdutosLoja, ProductItem} from "../pages/index";
 
 export default function Index() {
     return (
@@ -17,6 +17,7 @@ export default function Index() {
 
                 <Route path="HomeCliente" element={<HomeCliente />} />
                 <Route path="HomeLoja" element={<HomeLoja />} />
+                <Route path="Produto/:codigo" element={<ProductItem/>} />
 
         </Routes>
     );

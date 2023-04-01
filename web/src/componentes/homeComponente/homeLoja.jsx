@@ -34,7 +34,7 @@ export default function HomeLoja() {
                 <section>
                     <div className="div1">
                         <div className="textosLoja">
-                                <h1>Bem-vindo ao dashboard da loja {user['nome']}!</h1>
+                                <h1>Bem-vindo ao dashboard do(a) {user['nome']}!</h1>
                                 <p>Aqui você pode cadastrar um novo produto ou verificar o estoque atual do seu hortifruti.</p>
                         </div>
                         <div className="botoes2Inicial">

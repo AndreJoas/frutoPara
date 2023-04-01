@@ -28,6 +28,21 @@ module.exports = {
            });
         });
     },
+    getOneProduct: (codigo) => {
+        return new Promise((resolve, reject) => {
+           db.query("SELECT * FROM products WHERE codigo = ?", [codigo], (err, res) =>{
+                if(err){
+                    reject(err);
+                    return;
+                }
+                if(res.length > 0){
+                    resolve(res);
+                }else{
+                    resolve(false);
+                }
+           });
+        });
+    },
     getCategory: (categoria) => {
         return new Promise((resolve, reject) => {
            db.query("SELECT * FROM products WHERE categoria = ?", [categoria], (err, res) =>{

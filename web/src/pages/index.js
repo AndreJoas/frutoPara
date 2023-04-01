@@ -11,3 +11,4 @@ export {default as ProdutosLoja} from "./homeLojaProdutos/index";
 
 export {default as HomeCliente} from "./homeCliente/index";
 export {default as HomeLoja} from "./homeLoja/index";
+export {default as ProductItem} from "./ProductItemPage/index";
