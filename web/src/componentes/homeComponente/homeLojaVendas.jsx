@@ -1,15 +1,15 @@
-import "./stylesProdutos.css";
+import "./stylesVendas.css";
 import logo from "../logo-header.png"
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { buscaProdutoPorLoja } from "../../scripts/products.js";
+import { json, useNavigate } from "react-router-dom";
+import { buscaVendasPorLoja } from "../../scripts/sales.js";
 
 export default function HomeLojaProdutos() {
     const navigate = useNavigate();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [userExist, setUserExist] = useState(false);
-    const [images, setImages] = useState([]);
+    const [vendas, setVendas] = useState([]);
 
     useEffect(() => {
         const recoveredStore = sessionStorage.getItem("vendedor");
@@ -24,16 +24,16 @@ export default function HomeLojaProdutos() {
 
     useEffect(() => {
         if(user){
-            buscaProdutoPorLoja(user['cnpj']).then((data) => {
+            buscaVendasPorLoja(user['cnpj']).then((data) => {
                 const jsonResult = data['result'];
-                setImages(jsonResult);
+                setVendas(jsonResult.map(venda => JSON.parse(venda["json_venda"])));
             }).catch((error) => {
                 console.error(error)
             });
         }
     }, [user]);
 
-    if(images.length != undefined){
+    if(vendas.length != 0){
         return (
             <div>
                 <header className="cabeca">
@@ -42,18 +42,17 @@ export default function HomeLojaProdutos() {
                             </div>
                 </header>
                 <div className="TituloLojaProdutos">
-                    <h2>Produtos disponíveis na minha loja</h2>
-                    <a onClick={ e => navigate("/verVendas")}><button className="bt3Inicial">Visualizar vendas</button></a>
+                    <h2>Minhas Vendas</h2>  
                 </div>
-                <div className="allProducts">
-                    {images.map((element, index) => (
-                        <div className="mainProdutos">
-                            <div className="produtoEspecifico">
-                                    <img src={element.imagem_produto}/>
-                                    <h2>{element.nome}</h2>
-                                    <p>Categoria: {element.categoria}</p>
-                                    <p>Preço (unidade): R${element.preco_unidade}</p>
-                                    <p>Quant. Disponível: {element.quant_disponivel}</p>
+                <div className="allVendas">
+                    {vendas.map((element, index) => (
+                        <div className="mainVendas">
+                            <div className="vendaEspecifica">
+                                    <p>Cliente: {element.dadosCliente["nome"]}</p>
+                                    <p>Telefone do cliente: {element.dadosCliente["telefone"]}</p>
+                                    <p>Endereço: {element.dadosCliente["endereco"]}</p>
+                                    <p>Forma de Pagamento: {element.dadosVenda["forma_pagamento"]}</p>
+                                    <p>Total: R${element.dadosVenda["total_venda"]}</p>
                             </div>
                         </div>
                     ))}
@@ -69,10 +68,10 @@ export default function HomeLojaProdutos() {
                             </div>
                 </header>
                 <div className="TituloLojaProdutos">
-                    <h2>Produtos disponíveis na minha loja</h2>
+                    <h2>Minhas Vendas</h2>
                 </div>
                 <div className="noProductsCategory">
-                    <h2>A loja ainda não possui produtos cadastrados.</h2>
+                    <h2>A sua loja ainda não possui vendas :(</h2>
                 </div>
             </div>
         );

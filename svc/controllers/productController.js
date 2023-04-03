@@ -432,12 +432,28 @@ module.exports = {
             json.result.push({
                 codigo         : sales[i].codigo,
                 nome_comprador : sales[i].nome_comprador,
+                cnpj_loja      : sales[i].cnpj_loja,
                 nome_loja      : sales[i].nome_loja,
                 json_venda     : sales[i].json_venda
             });
         }
 
         res.json(json);
+    },
+    findAllSalesEspecify: async(req, res) => {
+        let json = {
+            error:"", 
+            result:{}
+        };
+
+        let cnpj = req.params.cnpj;
+        let sale = await productService.findAllSalesEspecify(cnpj);
+
+        if(sale){
+            json.result = sale;
+        }
+
+        res.json(json)
     },
     getOneSale: async(req, res) => {
         let json = {
@@ -463,13 +479,15 @@ module.exports = {
         let nome_comprador  = req.body.nome_comprador;
         let nome_loja  = req.body.nome_loja;
         let json_venda  = req.body.json_venda;
+        let cnpj_loja   = req.body.cnpj_loja;
 
-        if(nome_comprador && nome_loja && json_venda){
-            let saleID = await productService.insertSale(nome_comprador, nome_loja, json_venda);
+        if(nome_comprador && nome_loja && json_venda && cnpj_loja){
+            let saleID = await productService.insertSale(nome_comprador, nome_loja, cnpj_loja, json_venda);
             json.result = {
                 codigo: saleID,
                 nome_comprador,
                 nome_loja,
+                cnpj_loja,
                 json_venda
             };
         }else{
@@ -488,13 +506,15 @@ module.exports = {
         let nome_comprador = req.body.nome_comprador;
         let nome_loja      = req.body.nome_loja;
         let json_venda     = req.body.json_venda;
+        let cnpj_loja      = req.body.cnpj_loja;
 
         if(codigo && nome_comprador && nome_loja && json_venda){
-            await productService.updateSale(codigo, nome_comprador, nome_loja, json_venda);
+            await productService.updateSale(codigo, nome_comprador, nome_loja, cnpj_loja, json_venda);
             json.result = {
                 codigo,
                 nome_comprador,
                 nome_loja,
+                cnpj_loja,
                 json_venda
             };
         }else{

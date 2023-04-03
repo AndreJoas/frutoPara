@@ -40,39 +40,64 @@ export default function HomeLojaProdutos() {
         setCategoriaSelecionada(categoria);
     };
 
-    return (
-        <div>
-            <header className="cabeca">
-                        <div className="logoHeaderCadastro">
-                            <img src={logo} alt="" />
-                        </div>
-            </header>
-            <div className="TituloLojaProdutos">
-                <h2>Olá { user ? user['nome'] : null}! Boas compras.</h2>
-            </div>
-            <div className="categorias">
-                <h2 onClick={() => handleCategoriaClick("Frios")}><a>Frios</a></h2>
-                <h2 onClick={() => handleCategoriaClick("Frutas")}><a>Frutas</a></h2>
-                <h2 onClick={() => handleCategoriaClick("Legumes")}><a>Legumes</a></h2>
-                <h2 onClick={() => handleCategoriaClick("Verduras")}><a>Verduras</a></h2>
-                <h2 onClick={() => handleCategoriaClick(false)}><a>Todas as categorias</a></h2>
-            </div>
-            <div className="allProducts">
-                {imagensFiltradas.map((element, index) => (
-                    <div className="mainProdutos">
-                        <Link to={`/Produto/${element.codigo}`}>
-                            <div className="produtoEspecifico">
-                                    <img src={element.imagem_produto}/>
-                                    <h2>{element.nome}</h2>
-                                    <p>Categoria: {element.categoria}</p>
-                                    <p>Quant. Disponível: {element.quant_disponivel}</p>
-                                    <p>Preço (unidade): R${element.preco_unidade}</p>
-                                    <p>Nome da Loja: {element.nome_loja}</p>
+    if(imagensFiltradas.length != 0){
+        return (
+            <div>
+                <header className="cabeca">
+                            <div className="logoHeaderCadastro">
+                                <img src={logo} alt="" />
                             </div>
-                        </Link>
-                    </div>
-                ))}
+                </header>
+                <div className="TituloLojaProdutos">
+                    <h2>Olá { user ? user['nome'] : null}! Boas compras.</h2>
+                </div>
+                <div className="categorias">
+                    <h2 onClick={() => handleCategoriaClick("Frios")}><a>Frios</a></h2>
+                    <h2 onClick={() => handleCategoriaClick("Frutas")}><a>Frutas</a></h2>
+                    <h2 onClick={() => handleCategoriaClick("Legumes")}><a>Legumes</a></h2>
+                    <h2 onClick={() => handleCategoriaClick("Verduras")}><a>Verduras</a></h2>
+                    <h2 onClick={() => handleCategoriaClick(false)}><a>Todas as categorias</a></h2>
+                </div>
+                <div className="allProducts">
+                    {imagensFiltradas.map((element, index) => (
+                        <div className="mainProdutos">
+                            <Link to={`/Produto/${element.codigo}`}>
+                                <div className="produtoEspecifico">
+                                        <img src={element.imagem_produto}/>
+                                        <h2>{element.nome}</h2>
+                                        <p>Categoria: {element.categoria}</p>
+                                        <p>Quant. Disponível: {element.quant_disponivel}</p>
+                                        <p>Preço (unidade): R${element.preco_unidade}</p>
+                                        <p>Nome da Loja: {element.nome_loja}</p>
+                                </div>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
-    );
+        );
+    }else{
+        return (
+            <div>
+                <header className="cabeca">
+                            <div className="logoHeaderCadastro">
+                                <img src={logo} alt="" />
+                            </div>
+                </header>
+                <div className="TituloLojaProdutos">
+                    <h2>Olá { user ? user['nome'] : null}! Boas compras.</h2>
+                </div>
+                <div className="categorias">
+                    <h2 onClick={() => handleCategoriaClick("Frios")}><a>Frios</a></h2>
+                    <h2 onClick={() => handleCategoriaClick("Frutas")}><a>Frutas</a></h2>
+                    <h2 onClick={() => handleCategoriaClick("Legumes")}><a>Legumes</a></h2>
+                    <h2 onClick={() => handleCategoriaClick("Verduras")}><a>Verduras</a></h2>
+                    <h2 onClick={() => handleCategoriaClick(false)}><a>Todas as categorias</a></h2>
+                </div>
+                <div className="noProductsCategory">
+                    <h2>Sem produtos para esta categoria</h2>
+                </div>
+            </div>
+        );
+    }
 }

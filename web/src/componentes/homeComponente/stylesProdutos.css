@@ -35,9 +35,23 @@
     justify-content: flex-start;
     padding: 10px;
     font-weight: bolder;
+    flex-direction: row;
+    gap: 500px;
     font-size: 30px;
     color: #0A5F55;
     border-bottom: 2px #C4DC79 solid;
+    margin-bottom: 1%;
+    padding-left: 2.5rem;
+}
+.noProductsCategory{
+    display: flex;
+    width: 100%;
+    margin-top: 10%;
+    justify-content: center;
+    padding: 10px;
+    font-weight: bolder;
+    font-size: 30px;
+    color: #0A5F55;
     margin-bottom: 1%;
     padding-left: 2.5rem;
 }

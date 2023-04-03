@@ -276,6 +276,21 @@ module.exports = {
             });
         });
     },
+    findAllSalesEspecify: (cnpj) => {
+        return new Promise((resolve, reject) => {
+           db.query("SELECT * FROM sales WHERE cnpj_loja = ?", [cnpj], (err, res) =>{
+                if(err){
+                    reject(err);
+                    return;
+                }
+                if(res.length > 0){
+                    resolve(res);
+                }else{
+                    resolve(false);
+                }
+           });
+        });
+    },
     getOneSale: (codigo) => {
         return new Promise((resolve, reject) => {
            db.query("SELECT * FROM sales WHERE codigo = ?", [codigo], (err, res) =>{
@@ -291,10 +306,10 @@ module.exports = {
            });
         });
     },
-    insertSale: (nome_comprador, nome_loja, json_venda) => {
+    insertSale: (nome_comprador, nome_loja, cnpj_loja, json_venda) => {
         return new Promise((resolve, reject) => {
-            db.query("INSERT INTO sales (nome_comprador, nome_loja, json_venda) VALUES (?, ?, ?)", 
-                [nome_comprador, nome_loja, json_venda], 
+            db.query("INSERT INTO sales (nome_comprador, nome_loja, cnpj_loja, json_venda) VALUES (?, ?, ?, ?)", 
+                [nome_comprador, nome_loja, cnpj_loja, json_venda], 
                 (err, res) =>{
 
                 if(err){
@@ -305,10 +320,10 @@ module.exports = {
             });
         });
     },
-    updateSale: (codigo, nome_comprador, nome_loja, json_venda) => {
+    updateSale: (codigo, nome_comprador, nome_loja, cnpj_loja, json_venda) => {
         return new Promise((resolve, reject) => {
-            db.query("UPDATE sales SET nome_comprador = ?, nome_loja = ?, json_venda = ? WHERE codigo = ?", 
-                [nome_comprador, nome_loja, json_venda, codigo], 
+            db.query("UPDATE sales SET nome_comprador = ?, nome_loja = ?, cnpj_loja = ?, json_venda = ? WHERE codigo = ?", 
+                [nome_comprador, nome_loja, cnpj_loja, json_venda, codigo], 
                 (err, res) =>{
 
                 if(err){

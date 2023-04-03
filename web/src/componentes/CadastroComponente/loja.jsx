@@ -76,7 +76,7 @@ function Loja() {
             
             if(jsonRequest['cnpj']){
                 if(jsonRequest['cnpj'] == numCNPJ){
-                    msg += "Já possui um cadastro com este CNPJ. \n";
+                    msg += "Já existe um cadastro com este CNPJ. \n";
                 }
             }
             //verifica se contem pelo menos 1 letra maiuscula e 1 número

@@ -1,0 +1,28 @@
+.allVendas{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.mainVendas{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.vendaEspecifica{
+    width: 80%;
+    color: #0A5F55;
+    background-color: none;
+    border-bottom: 1.5px #C4DC79 solid;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    border-radius: 10px;
+    margin-top: 10px;
+    justify-content: center;
+}
+.vendaEspecifica:hover{
+    transition: 0.5s;
+    background-color: #e3f3b3;
+}

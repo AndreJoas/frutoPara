@@ -29,6 +29,7 @@ router.delete('/persons/delete/:codigo', productController.deletePerson);
 
 //SALES
 router.get('/sales/findAll', productController.findAllSales);
+router.get('/sales/findAll/:cnpj', productController.findAllSalesEspecify);
 router.get('/sales/getOne/:codigo', productController.getOneSale);
 router.post('/sales/insert', productController.insertSale);
 router.put('/sales/update/:codigo', productController.updateSale);

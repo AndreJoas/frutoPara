@@ -3,6 +3,7 @@ import logo from "../logo-header.png"
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { buscaProdutoEspecifico } from "../../scripts/products.js";
+import { addVenda } from "../../scripts/sales.js";
 import emailjs from "@emailjs/browser";
 
 export default function ProductItem() {
@@ -39,7 +40,6 @@ export default function ProductItem() {
         if(user){
             buscaProdutoEspecifico(urlParam).then((data) => {
                 const jsonResult = data['result'];
-                console.log(jsonResult)
                 setProduto(jsonResult[0]);
             }).catch((error) => {
                 console.error(error)
@@ -76,11 +76,43 @@ export default function ProductItem() {
             console.log("FALHA AO ENVIAR EMAIL => ", err)
         })
     }
-    
+
     const validateCompra = (e) => {
         if(!msg){
+            let jsonVenda = {
+                dadosCliente: {
+                    nome: user["nome"],
+                    cpf: user["cpf"],
+                    email: user["email"],
+                    endereco: user["endereco"],
+                    telefone: user["telefone"]
+                },
+                dadosLoja: {
+                    nome: produto["nome_loja"],
+                    cnpj: produto["cnpj_loja"]
+                },
+                dadosVenda: {
+                    forma_pagamento: pixChecked ? "PIX" : "Débito",
+                    total_venda: totalCompra,
+                    produtos: {
+                        nome: produto["nome"],
+                        valor_unidade: produto["preco_unidade"],
+                        categoria: produto["categoria"],
+                        quantidade_comprada: quantidade
+                    }
+                }
+            }
+        
+            let insertVenda = {
+                nome_comprador: user["nome"],
+                nome_loja: produto["nome_loja"],
+                cnpj_loja: produto["cnpj_loja"],
+                json_venda: JSON.stringify(jsonVenda)
+            }
+            
             setSucess(true);
-            sendEmail(e)
+            addVenda(insertVenda);
+            sendEmail(e);
         }
     }
 
