@@ -1,7 +1,7 @@
 const db = require('../db');
 
 module.exports = {
-    //PRODUCTS
+    //PRODUCT
     findAllProducts: () => {
         return new Promise((resolve, reject) => {
             db.query("SELECT * FROM products", (err, res) => {
