@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { buscaProdutoEspecifico } from "../../scripts/products.js";
 import { addVenda } from "../../scripts/sales.js";
+import { createTrailEvent } from "../../scripts/trail.js";
 import emailjs from "@emailjs/browser";
 
 export default function ProductItem() {
@@ -77,7 +78,7 @@ export default function ProductItem() {
         })
     }
 
-    const validateCompra = (e) => {
+    const validateCompra = async (e) => {
         if(!msg){
             let jsonVenda = {
                 dadosCliente: {
@@ -111,8 +112,33 @@ export default function ProductItem() {
             }
             
             setSucess(true);
-            addVenda(insertVenda);
-            sendEmail(e);
+
+            try {
+                const saleResponse = await addVenda(insertVenda);
+                
+                if (saleResponse && saleResponse.result.codigo) {
+                    const codigoVenda = saleResponse.result.codigo;
+                    
+                    try {
+                        const trailEventResponse = await createTrailEvent(
+                            codigoVenda
+                        );
+                            
+                        if (trailEventResponse && trailEventResponse.result.codigo) {
+                            setSucess(true);
+                            sendEmail(e);
+                        } else {
+                            console.error("Falha ao criar event trail");
+                        }
+                    } catch (trailError) {
+                        console.error("Erro ao criar event trail:", trailError);
+                    }
+                } else {
+                    console.error("Falha ao adicionar venda");
+                }
+            } catch (saleError) {
+                console.error("Erro ao adicionar venda:", saleError);
+            }
         }
     }
 

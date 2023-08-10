@@ -35,4 +35,7 @@ router.post('/sales/insert', productController.insertSale);
 router.put('/sales/update/:codigo', productController.updateSale);
 router.delete('/sales/delete/:codigo', productController.deleteSale);
 
+//EVENT TRAIL
+router.post('/trail/insert/:codigo', productController.insertTrail);
+
 module.exports = router;

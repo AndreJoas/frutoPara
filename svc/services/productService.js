@@ -278,19 +278,19 @@ module.exports = {
     },
     findAllSalesEspecify: (cnpj) => {
         return new Promise((resolve, reject) => {
-           db.query("SELECT * FROM sales WHERE cnpj_loja = ?", [cnpj], (err, res) =>{
-                if(err){
-                    reject(err);
-                    return;
-                }
-                if(res.length > 0){
+            db.query(
+                "SELECT s.*, et.timestamp FROM sales s LEFT JOIN eventtrail et ON s.codigo = et.id_entidade WHERE s.cnpj_loja = ?",
+                [cnpj],
+                (err, res) => {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
                     resolve(res);
-                }else{
-                    resolve(false);
                 }
-           });
+            );
         });
-    },
+    },    
     getOneSale: (codigo) => {
         return new Promise((resolve, reject) => {
            db.query("SELECT * FROM sales WHERE codigo = ?", [codigo], (err, res) =>{
@@ -310,16 +310,16 @@ module.exports = {
         return new Promise((resolve, reject) => {
             db.query("INSERT INTO sales (nome_comprador, nome_loja, cnpj_loja, json_venda) VALUES (?, ?, ?, ?)", 
                 [nome_comprador, nome_loja, cnpj_loja, json_venda], 
-                (err, res) =>{
-
-                if(err){
-                    reject(err);
-                    return;
+                (err, res) => {
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+                    resolve(res.insertId);
                 }
-                resolve(res.insertCodigo);
-            });
+            );
         });
-    },
+    },    
     updateSale: (codigo, nome_comprador, nome_loja, cnpj_loja, json_venda) => {
         return new Promise((resolve, reject) => {
             db.query("UPDATE sales SET nome_comprador = ?, nome_loja = ?, cnpj_loja = ?, json_venda = ? WHERE codigo = ?", 
@@ -345,4 +345,22 @@ module.exports = {
             });
         });
     },
+
+    //=================================
+
+    //EVENT TRAIL
+    insertTrail: (tipo_evento, id_entidade) => {
+        return new Promise((resolve, reject) => {
+            db.query("INSERT INTO eventtrail (tipo_evento, id_entidade) VALUES (?, ?);", 
+                [tipo_evento, id_entidade], 
+                (err, res) => {
+    
+                if (err) {
+                    reject(err);
+                    return;
+                }
+                resolve(res.insertId);
+            });
+        });
+    },      
 };

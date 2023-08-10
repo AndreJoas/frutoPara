@@ -419,7 +419,7 @@ module.exports = {
     },
     //=================================
 
-    //STORE
+    //SALES
     findAllSales: async (req, res) => {
         let json = {
             error:"", 
@@ -440,21 +440,27 @@ module.exports = {
 
         res.json(json);
     },
-    findAllSalesEspecify: async(req, res) => {
+    findAllSalesEspecify: async (req, res) => {
         let json = {
-            error:"", 
-            result:{}
+            error: "", 
+            result: []
         };
-
+    
         let cnpj = req.params.cnpj;
-        let sale = await productService.findAllSalesEspecify(cnpj);
-
-        if(sale){
-            json.result = sale;
+    
+        try {
+            const sales = await productService.findAllSalesEspecify(cnpj);
+            
+            if (sales) {
+                json.result = sales;
+            }
+            
+            res.json(json);
+        } catch (error) {
+            json.error = "Erro ao buscar vendas";
+            res.json(json);
         }
-
-        res.json(json)
-    },
+    },    
     getOneSale: async(req, res) => {
         let json = {
             error:"", 
@@ -539,4 +545,29 @@ module.exports = {
 
         res.json(json)
     },
+
+    //EVENT TRAIL
+    insertTrail: async (req, res) => {
+        let json = {
+            error: "",
+            result: {}
+        };
+
+        let tipo_evento = 'pagamento';
+        let id_entidade = req.params.codigo;
+
+        if (tipo_evento && id_entidade) {
+            let eventID = await productService.insertTrail(tipo_evento, id_entidade);
+            json.result = {
+                codigo: eventID,
+                tipo_evento,
+                id_entidade
+            };
+        } else {
+            json.error = 'Está faltando campos no cadastro!';
+        }
+
+        res.json(json);
+    },
+
 }
